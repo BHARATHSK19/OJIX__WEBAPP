@@ -113,26 +113,21 @@ export default async function IndustryPage({
             {data.operatingCapabilities.items.map((cap) => (
               <div
                 key={cap.title}
-                className="product-card group"
+                className="product-card product-card-compact group"
               >
                 <div>
-                  <div className="discipline-tag mb-5">
-
-                  </div>
-                  <div className="flex items-center gap-3.5 mb-3">
-                    <div className="product-icon-wrap">
-                      <CheckCircle size={22} weight="bold" />
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="product-icon-wrap product-icon-wrap-sm">
+                      <CheckCircle size={20} weight="bold" />
                     </div>
-                    <h3 className="product-title text-xl sm:text-2xl">
+                    <h3 className="product-title text-base sm:text-lg">
                       {cap.title}
                     </h3>
                   </div>
-                  <p className="product-desc">
+                  <p className="product-desc product-desc-compact">
                     {cap.desc}
                   </p>
                 </div>
-
-
               </div>
             ))}
           </div>

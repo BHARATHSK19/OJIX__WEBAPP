@@ -2441,6 +2441,30 @@ html[data-theme="dark"] .challenge-num {
     color: #e88a5e;
 }
 
+
+/* Compact variant for operating-capability cards */
+.product-card-compact {
+    padding: 18px 18px 16px !important;
+    min-height: auto !important;
+}
+
+.product-card-compact .product-icon-wrap-sm {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    flex: none;
+}
+
+.product-card-compact .product-icon-wrap-sm svg {
+    width: 18px;
+    height: 18px;
+}
+
+.product-desc-compact {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+}
+
 /* ========================================================
    INDUSTRY PAGE: ENGINEERING CHALLENGE FLIP CARDS
    Two faces (front: title+desc+see solution | back: OJIX approach)
