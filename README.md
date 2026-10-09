@@ -2,6 +2,12 @@
 
 Responsive Next.js App Router site for OJIX. Services, sectors, and products are maintained in `lib/content.ts`.
 
+## Developer docs
+
+- **[DOCUMENTATION.md](DOCUMENTATION.md)** — Architecture overview, stack, conventions
+- **[CONTENT_DATA.md](CONTENT_DATA.md)** — Full data shape reference for all content structures
+- **[FILE_TREE.md](FILE_TREE.md)** — Routing map, component directory, data flow
+
 ## Run locally
 
 ```bash
@@ -9,15 +15,14 @@ npm install
 npm run dev
 ```
 
-## Contact delivery
+## Prerequisite: Prisma generate
 
-Copy `.env.example` to `.env.local` and configure `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and a sender address verified in Resend. To enable Cloudflare Turnstile, add both the public site key and secret key. The contact endpoint returns a clear configuration message when the email service is not configured.
+```bash
+npx prisma generate
+```
 
-## Checks
+## Build
 
 ```bash
 npm run build
-npm run test:e2e
 ```
-
-Playwright downloads Chromium on first use with `npx playwright install chromium`.

@@ -1,45 +1,19 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle, ShieldCheck, Database, Cloud, Lock, ChartLineUp, HardDrives, Cpu } from "@phosphor-icons/react/dist/ssr";
-import { industries, services } from "@/lib/content";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  CheckCircle,
+  ShieldCheck,
+  Cpu,
+} from "@phosphor-icons/react/dist/ssr";
+import { industries } from "@/lib/content";
+import { industryData } from "../industryData";
 
 export function generateStaticParams() {
   return industries.map((x) => ({ slug: x.slug }));
 }
-
-const industryCapabilities = [
-  { title: "Purpose-Built Platforms & Portals", desc: "Custom web applications and native mobile interfaces designed around your staff and customer workflows.", icon: Cloud },
-  { title: "Workflow Automation & Practical AI", desc: "Private intelligence pipelines and automated task routing that eliminate manual data entry.", icon: HardDrives },
-  { title: "Real-Time Sync & API Connectors", desc: "Reliable event-driven message queues and third-party integrations with zero data loss.", icon: Database },
-  { title: "Resilient Cloud Foundations", desc: "Scalable VPC infrastructure with automated backups, disaster recovery, and 24/7 observability.", icon: ShieldCheck },
-  { title: "Enterprise Security & Audit Trails", desc: "Role-based permissions, end-to-end data encryption, and immutable compliance audit logs.", icon: Lock },
-  { title: "Direct Engineering Access", desc: "Continuous sprint shipping and technical advisory from practitioners who understand your sector.", icon: ChartLineUp }
-];
-
-const caseStudies = [
-  {
-    name: "LawX",
-    category: "LEGAL TECH",
-    headline: "A clearer operating picture for modern legal chambers.",
-    description: "Bring case matters, hearing calendars, client communication, and document workflows into a single high-security management platform.",
-    metrics: [
-      { label: "One Workspace", desc: "Cases, tasks & client updates" },
-      { label: "Zero Gaps", desc: "Automated matter workflows" }
-    ],
-    slug: "lawx"
-  },
-  {
-    name: "AI ProctX",
-    category: "EDTECH · AI ASSESSMENT",
-    headline: "Online assessments designed for institutional trust at scale.",
-    description: "Coordinate examination administration, monitoring, encrypted evidence, and reporting through an intelligent proctoring platform.",
-    metrics: [
-      { label: "Centralized", desc: "Unified exam administration" },
-      { label: "Evidence-Led", desc: "Audit-ready monitoring & reporting" }
-    ],
-    slug: "ai-proctx"
-  }
-];
 
 export default async function IndustryPage({
   params,
@@ -50,12 +24,8 @@ export default async function IndustryPage({
   const ind = industries.find((x) => x.slug === slug);
   if (!ind) notFound();
 
-  const caseItem =
-    slug === "lawtech"
-      ? caseStudies[0]
-      : slug === "edtech"
-        ? caseStudies[1]
-        : caseStudies[slug.length % 2];
+  const data = industryData[slug];
+  if (!data) notFound();
 
   return (
     <>
@@ -103,53 +73,50 @@ export default async function IndustryPage({
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 reveal">
             <span className="font-mono text-xs font-semibold uppercase tracking-widest text-theme-accent mb-4 block">
-              OPERATING CAPABILITIES
+              {data.operatingCapabilities.kicker}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-theme-text theme-transition mb-4">
-              Technology that fits your operating reality.
+              {data.operatingCapabilities.title}
             </h2>
             <p className="text-base sm:text-lg text-theme-muted max-w-2xl leading-relaxed">
-              Secure and scalable foundations, designed around the people, sensitive data, and decisions at the center of {ind.name.toLowerCase()}.
+              {data.operatingCapabilities.intro}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {industryCapabilities.map((cap, i) => {
-              const Icon = cap.icon;
-              return (
-                <div
-                  key={cap.title}
-                  className="product-card group"
-                >
-                  <div>
-                    <div className="discipline-tag mb-5">
+            {data.operatingCapabilities.items.map((cap) => (
+              <div
+                key={cap.title}
+                className="product-card group"
+              >
+                <div>
+                  <div className="discipline-tag mb-5">
 
-                    </div>
-                    <div className="flex items-center gap-3.5 mb-3">
-                      <div className="product-icon-wrap">
-                        <Icon size={22} />
-                      </div>
-                      <h3 className="product-title text-xl sm:text-2xl">
-                        {cap.title}
-                      </h3>
-                    </div>
-                    <p className="product-desc">
-                      {cap.desc}
-                    </p>
                   </div>
-                  <div className="product-pills">
-                    <span className="product-pill">Domain Verified</span>
-                    <span className="product-pill">Enterprise Scale</span>
-                  </div>
-                  <div className="product-footer">
-                    <span>Operating capability</span>
-                    <div className="product-btn">
-                      <ArrowRight size={15} />
+                  <div className="flex items-center gap-3.5 mb-3">
+                    <div className="product-icon-wrap">
+                      <CheckCircle size={22} weight="bold" />
                     </div>
+                    <h3 className="product-title text-xl sm:text-2xl">
+                      {cap.title}
+                    </h3>
+                  </div>
+                  <p className="product-desc">
+                    {cap.desc}
+                  </p>
+                </div>
+                <div className="product-pills">
+                  <span className="product-pill">Domain Verified</span>
+                  <span className="product-pill">Enterprise Scale</span>
+                </div>
+                <div className="product-footer">
+                  <span>Operating capability</span>
+                  <div className="product-btn">
+                    <ArrowRight size={15} />
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -159,46 +126,47 @@ export default async function IndustryPage({
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 reveal">
             <span className="font-mono text-xs font-semibold uppercase tracking-widest text-theme-accent mb-4 block">
-              DISCIPLINES APPLIED
+              {data.disciplinesApplied.kicker}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-theme-text theme-transition mb-4">
-              How we engineer {ind.name} solutions.
+              {data.disciplinesApplied.title}
             </h2>
             <p className="text-base sm:text-lg text-theme-muted max-w-2xl leading-relaxed">
-              We apply our core technical disciplines to build custom software that solves friction and accelerates momentum.
+              {data.disciplinesApplied.intro}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.slice(0, 4).map((s, i) => (
+            {data.disciplinesApplied.items.map((disc, i) => (
               <Link
-                href={`/services/${s.slug}`}
-                key={s.slug}
+                href="/contact"
+                key={disc.title}
                 className="product-card group"
               >
                 <div>
                   <div className="discipline-tag mb-5">
                     <span className="discipline-tag-circle" />
-                    <span>0{i + 1} / {s.kicker}</span>
+                    <span>0{i + 1} / {disc.kicker}</span>
                   </div>
                   <div className="flex items-center gap-3.5 mb-3">
                     <div className="product-icon-wrap">
                       <Cpu size={22} />
                     </div>
                     <h3 className="product-title text-xl sm:text-2xl">
-                      {s.name}
+                      {disc.title}
                     </h3>
                   </div>
                   <p className="product-desc">
-                    {s.intro}
+                    {disc.intro}
                   </p>
                 </div>
                 <div className="product-pills">
-                  <span className="product-pill">{s.features[0]}</span>
-                  <span className="product-pill">{s.features[1] || "Core Team"}</span>
+                  {disc.features.slice(0, 2).map((f) => (
+                    <span key={f} className="product-pill">{f}</span>
+                  ))}
                 </div>
                 <div className="product-footer">
-                  <span>View discipline</span>
+                  <span>Explore discipline</span>
                   <div className="product-btn">
                     <ArrowRight size={15} />
                   </div>
@@ -209,7 +177,7 @@ export default async function IndustryPage({
         </div>
       </section>
 
-      {/* Sector Case Study Showcase */}
+      {/* Sector Ecosystem CTA */}
       <section className="py-24 md:py-32 px-6 bg-theme-surface/30 theme-transition border-b border-theme-border">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14 reveal">
@@ -217,34 +185,39 @@ export default async function IndustryPage({
               SECTOR ECOSYSTEM
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-theme-text theme-transition mb-4">
-              A product designed for sector complexity.
+              Purpose-built for {ind.name.toLowerCase()} complexity.
             </h2>
+            <p className="text-base sm:text-lg text-theme-muted max-w-2xl">
+              Every system we ship is designed around the specific workflows, compliance requirements, and operational constraints of your industry.
+            </p>
           </div>
 
           <div className="bg-theme-surface border border-theme-border rounded-3xl p-8 sm:p-12 shadow-soft grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-theme-accent/15 text-theme-accent font-mono text-xs font-bold uppercase tracking-wider mb-4">
-                {caseItem.category}
+                {ind.name.toUpperCase()}
               </span>
               <h3 className="text-3xl font-extrabold text-theme-text theme-transition mb-4">
-                {caseItem.name} — {caseItem.headline}
+                Production-grade systems for {ind.name.toLowerCase()} teams.
               </h3>
               <p className="text-sm text-theme-muted leading-relaxed mb-8 max-w-xl">
-                {caseItem.description}
+                We combine deep domain understanding with rigorous engineering to deliver platforms that handle real operational pressure — secure, observable, and fully owned by your team.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
-                {caseItem.metrics.map((m) => (
-                  <div key={m.label} className="bg-theme-bg border border-theme-border rounded-xl p-4">
-                    <strong className="block text-base font-bold text-theme-text theme-transition">{m.label}</strong>
-                    <span className="text-xs text-theme-muted">{m.desc}</span>
-                  </div>
-                ))}
+                <div className="bg-theme-bg border border-theme-border rounded-xl p-4">
+                  <strong className="block text-base font-bold text-theme-text theme-transition">100% Ownership</strong>
+                  <span className="text-xs text-theme-muted">Code, cloud & credentials from day one</span>
+                </div>
+                <div className="bg-theme-bg border border-theme-border rounded-xl p-4">
+                  <strong className="block text-base font-bold text-theme-text theme-transition">Bi-Weekly Delivery</strong>
+                  <span className="text-xs text-theme-muted">Live staging demos, every sprint</span>
+                </div>
               </div>
               <Link
-                href={`/products/${caseItem.slug}`}
+                href="/contact"
                 className="inline-flex items-center gap-2 bg-theme-text text-theme-surface px-6 py-3 rounded-xl font-bold hover:bg-theme-accent hover:text-white transition-colors"
               >
-                Explore {caseItem.name} <ArrowRight size={16} />
+                Discuss your {ind.name} project <ArrowRight size={16} />
               </Link>
             </div>
             <div className="lg:col-span-5 bg-theme-bg border border-theme-border rounded-2xl p-6 sm:p-8 flex flex-col justify-center items-center text-center">
@@ -255,10 +228,10 @@ export default async function IndustryPage({
                 ENTERPRISE GRADE
               </span>
               <h4 className="text-xl font-bold text-theme-text theme-transition mb-2">
-                Production-Ready Platform
+                Production-Ready Infrastructure
               </h4>
               <p className="text-xs text-theme-muted leading-relaxed max-w-xs mb-6">
-                Tailored multi-tenant architecture, private VPC deployment, and zero third-party vendor lock-in.
+                Tailored cloud architecture, private VPC deployment, and zero third-party vendor lock-in — built for {ind.name.toLowerCase()} operations.
               </p>
               <Link
                 href="/contact"
