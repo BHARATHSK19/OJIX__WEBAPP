@@ -21,6 +21,19 @@ export interface DisciplineItem {
   features: string[];
 }
 
+export interface EngineeringChallenge {
+  title: string;
+  desc: string;
+  solution: string;
+  icon: string;
+}
+
+export interface CommerceCapability {
+  title: string;
+  desc: string;
+  icon: string;
+}
+
 export interface IndustryPageContent {
   slug: string;
   operatingCapabilities: {
@@ -34,6 +47,18 @@ export interface IndustryPageContent {
     title: string;
     intro: string;
     items: DisciplineItem[];
+  };
+  engineeringChallenges?: {
+    kicker: string;
+    title: string;
+    intro: string;
+    items: EngineeringChallenge[];
+  };
+  commerceCapabilities?: {
+    kicker: string;
+    title: string;
+    intro: string;
+    items: CommerceCapability[];
   };
 }
 
@@ -329,34 +354,34 @@ export const industryData: Record<string, IndustryPageContent> = {
   ecommerce: {
     slug: "ecommerce",
     operatingCapabilities: {
-      kicker: "E-COMMERCE · COMMERCE AT SCALE",
-      title: "Technology that fits your operating reality.",
+      kicker: "E-COMMERCE · COMMERCE CAPABILITIES",
+      title: "More than a storefront. An engineered commerce ecosystem.",
       intro:
-        "High-traffic storefronts, reliable checkout flows, and real-time inventory management engineered for e-commerce businesses that live and die by conversion and fulfillment.",
+        "From intelligent product discovery to dependable checkout and scalable infrastructure, we build the capabilities that help e-commerce businesses deliver better shopping experiences, operate efficiently, and grow with confidence.",
       items: [
         {
-          title: "Peak-Traffic Performance & Storefronts",
-          desc: "Edge-cached product catalogs, CDN-backed media delivery, and auto-scaling infrastructure that handles flash sales without breaking.",
+          title: "AI-Powered Commerce & Discovery",
+          desc: "Intelligent shopping assistants, catalogue-aware recommendations, and conversational product discovery powered by LLMs, RAG, Spring AI, and vector search — helping shoppers find exactly what they need.",
         },
         {
-          title: "Reliable Checkout & Payment Recovery",
-          desc: "Frictionless multi-step checkout, retry logic for failed payments, and abandoned cart recovery flows that recapture lost revenue.",
+          title: "Visual Search & Personalization",
+          desc: "Image-based product discovery, multimodal search, and personalised recommendations using computer vision, product embeddings, and recommendation engines tailored to your catalogue.",
         },
         {
-          title: "Inventory Consistency & Overselling Prevention",
-          desc: "Real-time stock tracking, atomic reservation logic, and multi-warehouse allocation that prevents overselling during high demand.",
+          title: "Real-Time Commerce & Integrations",
+          desc: "Event-driven inventory synchronization, live order tracking, payment connectivity, and automated notifications powered by Kafka, reliable APIs, and WebSockets that keep systems in sync.",
         },
         {
-          title: "Product Discovery & Recommendations",
-          desc: "AI-driven product recommendations, intelligent search with faceted filters, and personalized merchandising that increases basket size.",
+          title: "Predictive Intelligence & Pricing",
+          desc: "Price history, intelligent discount alerts, demand forecasting, and stockout prevention using predictive analytics, machine learning, and historical commerce data.",
         },
         {
-          title: "Order Fulfillment & Warehouse Integrations",
-          desc: "End-to-end order orchestration, shipping label generation, carrier integrations, and real-time tracking for last-mile visibility.",
+          title: "Secure Transactions & Trust",
+          desc: "Protected checkout, fraud-risk detection, verified purchases, role-based access, encrypted data, and traceable audit logs built around secure payment workflows.",
         },
         {
-          title: "Production Monitoring & Safe Deployments",
-          desc: "Real-time conversion monitoring, feature flag rollouts, and blue-green deployments that keep the store running during updates.",
+          title: "Scalable Commerce Infrastructure",
+          desc: "Production-ready storefronts, resilient backend services, Redis caching, automated testing, cloud deployment, and end-to-end observability designed to grow with your business.",
         },
       ],
     },
@@ -421,6 +446,50 @@ export const industryData: Record<string, IndustryPageContent> = {
             "Observability and incident response",
             "Cloud cost reviews",
           ],
+        },
+      ],
+    },
+    engineeringChallenges: {
+      kicker: "ENGINEERED FOR REAL-WORLD COMMERCE",
+      title: "Six challenges that can make or break an online business.",
+      intro:
+        "Behind every successful shopping experience is an engineering system designed to handle traffic, protect transactions, maintain accurate data, and recover when unexpected failures occur. We understand these challenges and build commerce platforms designed around them.",
+      items: [
+        {
+          title: "Traffic Spikes & Performance Degradation",
+          desc: "Traffic surges during sales, campaigns, and launches can overwhelm servers, exhaust caches, and slow databases—leading to slow pages, failed requests, and lost revenue.",
+          solution: "We build auto-scaling storefronts with edge caching and CDN-backed media so your store stays fast and accessible when demand peaks.",
+          icon: "TrafficSignal",
+        },
+        {
+          title: "Checkout Failures & Transaction Integrity",
+          desc: "Payment timeouts, interrupted sessions, duplicate orders, and uncertain payment status are the most damaging failures for shopper trust.",
+          solution: "We engineer dependable checkout with idempotent operations, clear status tracking, and resilient payment integrations that protect transactions.",
+          icon: "ReceiptX",
+        },
+        {
+          title: "Inventory Inconsistency & Overselling",
+          desc: "Simultaneous purchases, delayed stock updates, and inconsistent data across channels lead to overselling and damage brand reputation.",
+          solution: "We build atomic reservation logic and real-time stock sync to improve accuracy and prevent overselling across channels.",
+          icon: "Warehouse",
+        },
+        {
+          title: "Database Bottlenecks & Data Synchronization",
+          desc: "Slow queries, growing catalogs, and inconsistent records across commerce platforms and payment systems compound over time.",
+          solution: "We engineer efficient data systems with smart schema design, caching, and resilient integrations for fast access and reliable sync.",
+          icon: "Database",
+        },
+        {
+          title: "Product Discovery, Search & Personalization",
+          desc: "Poor search relevance, slow filters, zero-result queries, and irrelevant recommendations prevent customers from finding products.",
+          solution: "We build AI-powered search, vector-based recommendations, and personalised merchandising to help shoppers find products faster.",
+          icon: "Binoculars",
+        },
+        {
+          title: "Production Failures, Security & Infrastructure Costs",
+          desc: "Deployment regressions, third-party outages, stuck jobs, security threats, and rising infrastructure costs are realities every growing commerce team must manage.",
+          solution: "We build with cloud-native architecture, automated testing, and full observability for reliability, security, and controlled costs.",
+          icon: "WarningCircle",
         },
       ],
     },

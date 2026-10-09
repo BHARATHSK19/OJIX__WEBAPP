@@ -2364,3 +2364,223 @@
 @media(max-width:960px){.mega-preview-menu .mega-sidebar-wide{width:370px;padding:16px 12px}.industry-tab-name{font-size:11.5px}}
 @media(max-width:767px){.mega-menu-panel{display:none!important}.mobile-reference-menu{display:block}.site-header{gap:0}}
 @media(max-width:520px){.mobile-reference-menu{top:68px;padding:12px}.mobile-reference-links{grid-template-columns:1fr}.mobile-reference-links a{min-height:44px}.mega-menu-panel{width:calc(100vw - 20px)}}
+
+/* ========================================================
+   INDUSTRY PAGE: ENGINEERING CHALLENGE CARDS
+   Consistent with the OJIX design system (Terracotta #c9662f | Midnight Navy #0f1c2f)
+   Used on ecommerce / industry detail pages for challenge displays
+======================================================== */
+
+/* Challenge Card - distinct from product-card with a cleaner visual weight */
+.challenge-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 28, 47, 0.12);
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    box-shadow: 0 4px 24px -2px rgba(15, 28, 47, 0.04);
+    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    cursor: default;
+}
+
+html[data-theme="dark"] .challenge-card {
+    background-color: #0d1420;
+    border-color: #1a273b;
+    box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Challenge Solution Highlight - the OJIX approach callout */
+.challenge-solution {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(15, 28, 47, 0.08);
+    background: linear-gradient(135deg, rgba(201, 102, 47, 0.04) 0%, rgba(201, 102, 47, 0.02) 100%);
+    border-radius: 14px;
+    padding: 14px 16px;
+    transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+html[data-theme="dark"] .challenge-solution {
+    background: linear-gradient(135deg, rgba(201, 102, 47, 0.08) 0%, rgba(201, 102, 47, 0.03) 100%);
+    border-top-color: rgba(201, 102, 47, 0.15);
+}
+
+/* Label row inside solution block: number + OJIX approach text */
+.challenge-solution-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+/* Numbered sequence badge */
+.challenge-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    background: rgba(201, 102, 47, 0.12);
+    color: #c9662f;
+    font-family: var(--font-mono), "SF Mono", "Fira Code", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: background 0.35s ease, color 0.35s ease;
+}
+
+html[data-theme="dark"] .challenge-num {
+    background: rgba(201, 102, 47, 0.2);
+    color: #e88a5e;
+}
+
+/* ========================================================
+   INDUSTRY PAGE: ENGINEERING CHALLENGE FLIP CARDS
+   Two faces (front: title+desc+see solution | back: OJIX approach)
+   Flips on checkbox state so it works without JS.
+======================================================== */
+
+.challenge-flip-card {
+    position: relative;
+    perspective: 1500px;
+    min-height: 320px;
+}
+
+/* Hidden checkbox state drives the flip via :checked sibling selector */
+.challenge-flip-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.challenge-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+}
+
+.challenge-flip-toggle:checked ~ .challenge-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.challenge-flip-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    min-height: 320px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 28, 47, 0.12);
+    border-radius: 22px;
+    padding: 24px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 4px 24px -2px rgba(15, 28, 47, 0.04);
+    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-theme="dark"] .challenge-flip-face {
+    background-color: #0d1420;
+    border-color: #1a273b;
+    box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.2);
+}
+
+.challenge-flip-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, rgba(201, 102, 47, 0.05) 0%, rgba(201, 102, 47, 0.02) 100%);
+    border-color: rgba(201, 102, 47, 0.25);
+}
+
+html[data-theme="dark"] .challenge-flip-back {
+    background: linear-gradient(135deg, rgba(201, 102, 47, 0.1) 0%, rgba(201, 102, 47, 0.04) 100%);
+    border-color: rgba(201, 102, 47, 0.35);
+}
+
+/* "See solution" button on the front face */
+.challenge-see-solution {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border-radius: 12px;
+    background-color: #0f1c2f;
+    color: #ffffff;
+    font-family: var(--font-mono), "SF Mono", "Fira Code", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    user-select: none;
+    align-self: flex-start;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.challenge-see-solution:hover {
+    background-color: #c9662f;
+    transform: translateX(2px);
+}
+
+html[data-theme="dark"] .challenge-see-solution {
+    background-color: #ffffff;
+    color: #0f1c2f;
+}
+
+html[data-theme="dark"] .challenge-see-solution:hover {
+    background-color: #c9662f;
+    color: #ffffff;
+}
+
+/* "Back to challenge" button on the back face */
+.challenge-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: #c9662f;
+    border: 1px solid rgba(201, 102, 47, 0.4);
+    font-family: var(--font-mono), "SF Mono", "Fira Code", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    user-select: none;
+    align-self: flex-start;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.challenge-back-btn:hover {
+    background-color: #c9662f;
+    color: #ffffff;
+    border-color: #c9662f;
+}
+
+html[data-theme="dark"] .challenge-back-btn {
+    color: #e88a5e;
+    border-color: rgba(201, 102, 47, 0.5);
+}
+
+html[data-theme="dark"] .challenge-back-btn:hover {
+    background-color: #c9662f;
+    color: #ffffff;
+}
