@@ -1,0 +1,10 @@
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import { AnimatePresence, motion } from "motion/react";
+import { ArrowUpRight, CheckCircle } from "@phosphor-icons/react";
+import { products } from "@/lib/content";
+export function ProductShowcase(){const [index,setIndex]=useState(0);const p=products[index];return <div className="showcase-wrap"><div className="tabs" role="tablist" aria-label="OJIX products">{products.map((x,i)=><button role="tab" aria-selected={index===i} className={index===i?"tab selected":"tab"} key={x.slug} onClick={()=>setIndex(i)}>{x.name}</button>)}</div><div className="showcase-card"><AnimatePresence mode="wait"><motion.div key={p.slug} className="showcase-grid" initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-8}} transition={{duration:.24}}>
+ <div className="device-scene"><div className="device-window"><div className="device-top"><div className="window-dots"><i/><i/><i/></div><span>ojix.app / {p.slug}</span><span>•••</span></div><div className="mock-dashboard"><aside><b>{p.name}</b><i/><i/><i/><i/></aside><div className="mock-content"><small>OVERVIEW / 01</small><h4>{p.name}<br/>workspace</h4><div className="mock-stats"><span><small>ACTIVE ITEMS</small><b>{index===0?"248":index===1?"1,204":index===2?"18,690":"3.8 TB"}</b></span><span><small>STATUS</small><b className="status-ok">● Operational</b></span></div><div className="mock-chart"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div><div className="mock-lines"><i/><i/><i/></div></div></div></div><div className="device-glow"/></div>
+ <div className="showcase-copy"><span className="eyebrow">{p.category}</span><h2>{p.headline}</h2><p>{p.description}</p><div className="metric-grid">{p.metrics.map(([a,b])=><div key={a}><strong>{a}</strong><span>{b}</span></div>)}</div><div className="product-benefits">{p.benefits.slice(0,3).map(b=><span key={b}><CheckCircle size={15}/>{b}</span>)}</div><Link href={`/products/${p.slug}`} className="button">Explore {p.name} <ArrowUpRight size={16}/></Link></div>
+ </motion.div></AnimatePresence></div></div>}
