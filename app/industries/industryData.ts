@@ -63,225 +63,350 @@ export interface IndustryPageContent {
 }
 
 export const industryData: Record<string, IndustryPageContent> = {
-  saas: {
-    slug: "saas",
-    operatingCapabilities: {
-      kicker: "SaaS · PRODUCT INFRASTRUCTURE",
-      title: "Technology that fits your operating reality.",
-      intro:
-        "Multi-tenant reliability, subscription precision, and API-scale infrastructure engineered for SaaS companies that can't afford downtime.",
-      items: [
-        {
-          title: "Multi-Tenant Architecture & Isolation",
-          desc: "Secure tenant boundaries, row-level data isolation, and shared-nothing resource allocation so every customer gets predictable performance.",
-        },
-        {
-          title: "Subscription Lifecycle & Billing",
-          desc: "Plan management, proration, invoicing, and webhook-driven billing integrations with Stripe or Razorpay for accurate recurring revenue.",
-        },
-        {
-          title: "AuthN, AuthZ & Usage Metering",
-          desc: "SSO, role-based access, feature flags, and real-time usage metering that ties product access directly to subscription state.",
-        },
-        {
-          title: "Background Jobs & Scalable Infrastructure",
-          desc: "Queue-based task processing, rate-limited webhook delivery, and auto-scaling compute that handles burst traffic without breaking SLAs.",
-        },
-        {
-          title: "Observability & Retention Analytics",
-          desc: "Live dashboards for activation, churn signals, and feature adoption — so product and engineering teams make decisions from data.",
-        },
-      ],
-    },
-    disciplinesApplied: {
-      kicker: "DISCIPLINES APPLIED",
-      title: "How we engineer SaaS solutions.",
-      intro:
-        "Custom platforms built around your product logic, automation that reduces operational overhead, and cloud infrastructure designed for 99.99% availability.",
-      items: [
-        {
-          kicker: "CUSTOM WEB & MOBILE APPS",
-          title: "Engineering",
-          intro:
-            "Purpose-built dashboards, admin panels, and customer-facing portals that grow with your product roadmap.",
-          features: [
-            "Product strategy and technical discovery",
-            "Custom web platforms and client portals",
-            "Native iOS and Android applications",
-            "Secure APIs, roles and workflows",
-            "Performance engineering and accessibility",
-            "Full source-code and IP handover",
-          ],
-        },
-        {
-          kicker: "PRACTICAL AI SYSTEMS",
-          title: "AI & Automation",
-          intro:
-            "Intelligent onboarding assistants, churn prediction signals, and automated support triage that scale with your user base.",
-          features: [
-            "Private company knowledge search",
-            "Document extraction and OCR",
-            "AI assistants with approval steps",
-            "Customer support automation",
-            "Workflow and task orchestration",
-            "Evaluation, guardrails and audit trails",
-          ],
-        },
-        {
-          kicker: "INSTANT SYNC & CONNECTIONS",
-          title: "Integrations",
-          intro:
-            "Reliable webhooks, CRM sync, billing connectors, and third-party integrations that keep your SaaS ecosystem running smoothly.",
-          features: [
-            "Instant data sync between systems",
-            "Payment and WhatsApp integrations",
-            "Reliable queues and retries",
-            "API design and documentation",
-            "Event-driven workflows",
-            "Integration monitoring",
-          ],
-        },
-        {
-          kicker: "CLOUD & 24/7 RELIABILITY",
-          title: "Cloud & DevOps",
-          intro:
-            "Resilient Kubernetes clusters, zero-downtime deployments, and observability stacks built for SaaS uptime guarantees.",
-          features: [
-            "Cloud architecture and migration",
-            "Automated scaling and recovery",
-            "Zero-downtime releases",
-            "Security and backup policies",
-            "Observability and incident response",
-            "Cloud cost reviews",
-          ],
-        },
-      ],
-    },
+saas: {
+  slug: "saas",
+
+  operatingCapabilities: {
+    kicker: "SAAS · PRODUCT INFRASTRUCTURE",
+    title: "Technology that fits your operating reality.",
+    intro:
+      "Secure multi-tenant platforms, dependable subscription workflows, and scalable infrastructure engineered for SaaS products that need to grow without compromising reliability.",
+
+    items: [
+      {
+        title: "Multi-Tenant Architecture & Data Isolation",
+        desc: "Secure customer workspaces, tenant-aware permissions, isolated business data, and consistent performance across shared SaaS environments as your customer base expands.",
+      },
+      {
+        title: "Subscription Intelligence & Revenue Operations",
+        desc: "Flexible subscription plans, recurring billing, invoice management, payment recovery, usage-based pricing, and synchronized account entitlements for predictable revenue operations.",
+      },
+      {
+        title: "Identity, Access & Usage Governance",
+        desc: "Secure authentication, enterprise SSO, role-based permissions, organization management, feature entitlements, and usage controls aligned with customer plans and business policies.",
+      },
+      {
+        title: "Scalable APIs & Workflow Automation",
+        desc: "Reliable APIs, background processing, third-party integrations, automated business workflows, and resilient data exchange designed to support growing workloads and connected systems.",
+      },
+      {
+        title: "Product Intelligence & Customer Retention",
+        desc: "Customer onboarding analytics, feature adoption insights, usage reporting, churn indicators, and actionable product intelligence that help teams improve engagement and retention.",
+      },
+      {
+        title: "Cloud Reliability & Platform Security",
+        desc: "Production-ready infrastructure, continuous monitoring, secure deployments, backup and recovery planning, performance optimization, and operational visibility designed for dependable SaaS delivery.",
+      },
+    ],
   },
 
-  fintech: {
-    slug: "fintech",
-    operatingCapabilities: {
-      kicker: "FINTECH · SECURE TRANSACTIONS",
-      title: "Technology that fits your operating reality.",
-      intro:
-        "Payment-grade reliability, ledger integrity, and regulatory compliance engineered for financial platforms where every transaction must be accurate and auditable.",
-      items: [
-        {
-          title: "Secure Transactions & Payment Processing",
-          desc: "PCI-aware payment flows, idempotent transaction handling, and multi-gateway routing for reliable money movement.",
-        },
-        {
-          title: "Ledger Integrity & Reconciliation",
-          desc: "Immutable audit trails, double-entry ledger patterns, and automated reconciliation pipelines that catch discrepancies in real time.",
-        },
-        {
-          title: "Fraud Detection & Anomaly Monitoring",
-          desc: "Behavioral signal collection, rule-based and ML-driven fraud scoring, and real-time alerting for suspicious transaction patterns.",
-        },
-        {
-          title: "Identity Verification & Access Control",
-          desc: "KYC/AML integration, biometric authentication, and role-based access controls aligned with financial regulatory requirements.",
-        },
-        {
-          title: "Financial Reporting & Regulatory Compliance",
-          desc: "Automated regulatory reporting, data retention policies, and export-ready audit logs compliant with RBI and DPDP standards.",
-        },
-      ],
-    },
-    disciplinesApplied: {
-      kicker: "DISCIPLINES APPLIED",
-      title: "How we engineer fintech solutions.",
-      intro:
-        "Custom platforms for financial operations, AI-driven risk monitoring, and hardened cloud infrastructure built for regulatory scrutiny.",
-      items: [
-        {
-          kicker: "CUSTOM WEB & MOBILE APPS",
-          title: "Engineering",
-          intro:
-            "Secure customer-facing and admin interfaces with role-based access, transaction histories, and real-time balance updates.",
-          features: [
-            "Product strategy and technical discovery",
-            "Custom web platforms and client portals",
-            "Native iOS and Android applications",
-            "Secure APIs, roles and workflows",
-            "Performance engineering and accessibility",
-            "Full source-code and IP handover",
-          ],
-        },
-        {
-          kicker: "PRACTICAL AI SYSTEMS",
-          title: "AI & Automation",
-          intro:
-            "Fraud scoring pipelines, anomaly detection models, and automated compliance document processing for financial operations.",
-          features: [
-            "Private company knowledge search",
-            "Document extraction and OCR",
-            "AI assistants with approval steps",
-            "Customer support automation",
-            "Workflow and task orchestration",
-            "Evaluation, guardrails and audit trails",
-          ],
-        },
-        {
-          kicker: "INSTANT SYNC & CONNECTIONS",
-          title: "Integrations",
-          intro:
-            "Payment gateway orchestration, banking API integrations, and real-time event streaming for transaction pipelines.",
-          features: [
-            "Instant data sync between systems",
-            "Payment and WhatsApp integrations",
-            "Reliable queues and retries",
-            "API design and documentation",
-            "Event-driven workflows",
-            "Integration monitoring",
-          ],
-        },
-        {
-          kicker: "CLOUD & 24/7 RELIABILITY",
-          title: "Cloud & DevOps",
-          intro:
-            "Hardened cloud deployments with encryption-at-rest, WAF rules, and incident response playbooks built for financial uptime.",
-          features: [
-            "Cloud architecture and migration",
-            "Automated scaling and recovery",
-            "Zero-downtime releases",
-            "Security and backup policies",
-            "Observability and incident response",
-            "Cloud cost reviews",
-          ],
-        },
-      ],
-    },
+  disciplinesApplied: {
+    kicker: "DISCIPLINES APPLIED",
+    title: "How we engineer SaaS solutions.",
+    intro:
+      "From product architecture to production operations, we build secure, maintainable SaaS platforms that streamline business workflows, support customer growth, and evolve with your product roadmap.",
+
+    items: [
+      {
+        kicker: "CUSTOM SAAS PLATFORMS",
+        title: "Product Engineering",
+        intro:
+          "Purpose-built SaaS applications, organization dashboards, and customer portals designed around your business model and user workflows.",
+
+        features: [
+          "Product discovery and solution architecture",
+          "Custom SaaS applications and dashboards",
+          "Multi-tenant workspaces and organization management",
+          "Subscription plans and feature entitlements",
+          "Responsive interfaces and accessibility",
+          "Source-code ownership and technical handover",
+        ],
+      },
+
+      {
+        kicker: "INTELLIGENT PRODUCT EXPERIENCES",
+        title: "AI & Automation",
+        intro:
+          "Practical AI capabilities and workflow automation that reduce manual effort, improve customer support, and help teams make better product decisions.",
+
+        features: [
+          "AI-powered assistants and knowledge search",
+          "Private document search and information retrieval",
+          "Automated onboarding and customer support",
+          "Document processing and data extraction",
+          "Intelligent task routing and workflow automation",
+          "AI evaluation, access controls, and auditability",
+        ],
+      },
+
+      {
+        kicker: "BILLING, APIS & ECOSYSTEMS",
+        title: "Integrations & Data",
+        intro:
+          "Connected product ecosystems that keep payments, customer records, external services, and internal workflows operating consistently.",
+
+        features: [
+          "Payment gateway and subscription integrations",
+          "CRM, ERP, and third-party API connectivity",
+          "Webhook processing and delivery monitoring",
+          "Reliable background jobs and retry workflows",
+          "Real-time notifications and data synchronization",
+          "API documentation, versioning, and access controls",
+        ],
+      },
+
+      {
+        kicker: "PRODUCTION-READY INFRASTRUCTURE",
+        title: "Cloud & DevOps",
+        intro:
+          "Resilient deployment environments and operational practices that help SaaS products remain available, observable, secure, and cost-efficient as demand grows.",
+
+        features: [
+          "Cloud architecture and infrastructure migration",
+          "Automated builds, testing, and deployments",
+          "Scalable compute and workload management",
+          "Centralized logging, metrics, and alerting",
+          "Security hardening, backups, and disaster recovery",
+          "Performance optimization and cloud cost management",
+        ],
+      },
+    ],
   },
 
-  healthcare: {
+
+  engineeringChallenges: {
+    kicker: "ENGINEERED FOR SAAS GROWTH",
+    title: "Six challenges that can slow a growing SaaS product.",
+    intro:
+      "As a SaaS product scales, reliability, tenant boundaries, billing accuracy, and smooth integrations become essential to customer trust. We build platforms designed to address these operational challenges as your business grows.",
+    items: [
+      {
+        title: "Traffic Spikes & Slow Application Response",
+        desc: "Sudden demand, expensive queries, and resource contention can slow dashboards and APIs, interrupt workflows, and frustrate customers.",
+        solution: "We engineer responsive SaaS experiences and scalable application foundations designed to handle changing workloads while keeping critical workflows accessible.",
+        icon: "Gauge",
+      },
+      {
+        title: "Tenant Data Isolation & Access Risks",
+        desc: "Weak tenant boundaries, inconsistent permissions, and poorly scoped queries can expose information across customer accounts or grant excessive access.",
+        solution: "We design clear tenant boundaries and controlled access experiences that help protect customer data and make permissions easier to govern.",
+        icon: "ShieldCheck",
+      },
+      {
+        title: "Subscription, Billing & Entitlement Errors",
+        desc: "Failed payments, duplicate events, incorrect plan changes, and delayed status updates can cause billing disputes or give users the wrong product access.",
+        solution: "We build dependable subscription workflows that keep payment status, customer plans, invoices, and product access aligned.",
+        icon: "CreditCard",
+      },
+      {
+        title: "Unreliable APIs & Background Jobs",
+        desc: "Third-party outages, rate limits, timeouts, and failed jobs can leave integrations incomplete and create inconsistent customer or operational records.",
+        solution: "We create resilient integration and task-processing workflows with clear status visibility and controlled failure recovery.",
+        icon: "Workflow",
+      },
+      {
+        title: "Limited Product Visibility & Customer Churn",
+        desc: "When teams cannot understand onboarding friction, feature adoption, or declining usage, it becomes harder to improve the product and retain customers.",
+        solution: "We deliver useful product analytics and customer-journey visibility so teams can identify friction and prioritize meaningful improvements.",
+        icon: "ChartNoAxesCombined",
+      },
+      {
+        title: "Deployment Risk & Operational Blind Spots",
+        desc: "Poorly observed services, risky releases, and weak recovery plans can turn small defects into extended service interruptions.",
+        solution: "We strengthen delivery and operations with monitoring, controlled releases, recovery planning, and clear visibility into platform health.",
+        icon: "CloudCog",
+      },
+    ],
+  },
+  },
+
+fintech: {
+  slug: "fintech",
+
+  operatingCapabilities: {
+    kicker: "FINTECH · SECURE TRANSACTIONS",
+    title: "Financial technology built on trust and precision.",
+    intro:
+      "Secure transaction workflows, dependable financial records, and resilient infrastructure engineered for fintech products where accuracy, transparency, and customer trust matter.",
+
+    items: [
+      {
+        title: "Secure Payments & Transaction Orchestration",
+        desc: "Reliable payment workflows, multi-gateway connectivity, transaction status tracking, duplicate-request protection, and failure recovery designed to support consistent digital payment experiences.",
+      },
+      {
+        title: "Financial Ledgers & Reconciliation",
+        desc: "Structured financial records, traceable balance movements, transaction history, automated reconciliation, and discrepancy detection that improve financial accuracy and accountability.",
+      },
+      {
+        title: "Fraud Intelligence & Risk Monitoring",
+        desc: "Suspicious activity monitoring, transaction risk indicators, anomaly detection, configurable fraud rules, and investigation workflows that help financial teams respond to potential threats.",
+      },
+      {
+        title: "Digital Identity & Financial Access",
+        desc: "Secure authentication, customer verification integrations, role-based permissions, account protection, and controlled access workflows designed for sensitive financial operations.",
+      },
+      {
+        title: "Compliance Operations & Financial Reporting",
+        desc: "Audit-ready activity records, structured reporting, document management, configurable retention policies, and compliance-support workflows aligned with applicable business and regulatory requirements.",
+      },
+      {
+        title: "Scalable Financial Infrastructure",
+        desc: "Resilient APIs, transaction processing pipelines, real-time operational monitoring, secure deployments, and recovery planning designed to support growing transaction volumes and critical financial workflows.",
+      },
+    ],
+  },
+
+  disciplinesApplied: {
+    kicker: "DISCIPLINES APPLIED",
+    title: "How we engineer fintech solutions.",
+    intro:
+      "From payment applications and financial intelligence to secure integrations and production operations, we build maintainable financial platforms designed around accuracy, accountability, and operational resilience.",
+
+    items: [
+      {
+        kicker: "DIGITAL FINANCIAL PRODUCTS",
+        title: "Product Engineering",
+        intro:
+          "Secure financial applications and operational dashboards that simplify payments, account management, lending workflows, and financial reporting.",
+
+        features: [
+          "Product discovery and financial workflow analysis",
+          "Digital payment and financial management platforms",
+          "Customer portals and operations dashboards",
+          "Account management and transaction histories",
+          "Secure APIs and permission-based workflows",
+          "Source-code ownership and technical handover",
+        ],
+      },
+
+      {
+        kicker: "RISK INTELLIGENCE & AUTOMATION",
+        title: "AI & Automation",
+        intro:
+          "Practical intelligence and automated workflows that help financial teams review transactions, identify unusual activity, and reduce repetitive operational work.",
+
+        features: [
+          "Transaction anomaly detection",
+          "Fraud-risk indicators and review workflows",
+          "Financial document extraction and OCR",
+          "Automated customer onboarding workflows",
+          "Compliance document classification and processing",
+          "Human review, audit trails, and model evaluation",
+        ],
+      },
+
+      {
+        kicker: "PAYMENTS & FINANCIAL ECOSYSTEMS",
+        title: "Integrations",
+        intro:
+          "Dependable connections between payment providers, banking services, identity verification platforms, and financial reporting systems.",
+
+        features: [
+          "Payment gateway integrations",
+          "Banking and financial API connectivity",
+          "Transaction event processing and notifications",
+          "Webhook validation and duplicate-event protection",
+          "Reconciliation and external data synchronization",
+          "Integration health monitoring and failure recovery",
+        ],
+      },
+
+      {
+        kicker: "SECURE FINANCIAL OPERATIONS",
+        title: "Cloud & DevOps",
+        intro:
+          "Security-conscious infrastructure and controlled delivery practices that help financial applications remain observable, recoverable, and prepared for growing workloads.",
+
+        features: [
+          "Cloud architecture and infrastructure migration",
+          "Encryption and secrets management",
+          "Automated testing and controlled deployments",
+          "Application monitoring and incident alerting",
+          "Backup, recovery, and continuity planning",
+          "Security reviews and infrastructure cost optimization",
+        ],
+      },
+    ],
+  },
+
+
+  engineeringChallenges: {
+    kicker: "ENGINEERED FOR FINANCIAL TRUST",
+    title: "Six challenges that put financial platforms under pressure.",
+    intro:
+      "Financial products depend on accurate records, secure access, dependable transaction flows, and traceable operations. We build fintech systems around these demands without making blanket claims about regulatory approval or guaranteed outcomes.",
+    items: [
+      {
+        title: "Failed Transactions & Payment Disruptions",
+        desc: "Gateway timeouts, duplicate requests, delayed confirmations, and unclear payment status can interrupt transactions and create customer disputes.",
+        solution: "We build dependable payment workflows with clear status tracking, resilient processing, and consistent transaction visibility across connected systems.",
+        icon: "CreditCard",
+      },
+      {
+        title: "Ledger Inconsistencies & Reconciliation Errors",
+        desc: "Differences between transaction records, balances, bank statements, and provider reports can result from delayed updates or incomplete reconciliation.",
+        solution: "We create traceable financial recordkeeping and reconciliation workflows that help identify discrepancies and improve accountability.",
+        icon: "Scale",
+      },
+      {
+        title: "Fraud Risks & Suspicious Activity",
+        desc: "Account takeover, identity misuse, and unusual transaction patterns can lead to losses and damage customer trust.",
+        solution: "We develop risk-monitoring capabilities that surface suspicious activity, support timely review, and help teams investigate potential threats.",
+        icon: "ShieldAlert",
+      },
+      {
+        title: "Identity Verification & Access Vulnerabilities",
+        desc: "Incomplete verification, weak authentication, and excessive permissions can increase impersonation risks and complicate onboarding.",
+        solution: "We build secure onboarding and access-management workflows that support verification, controlled financial access, and consistent reviews.",
+        icon: "Fingerprint",
+      },
+      {
+        title: "Compliance Complexity & Audit Gaps",
+        desc: "Fragmented records, manual reporting, and inconsistent retention can make audits time-consuming and increase operational overhead.",
+        solution: "We develop traceable reporting and compliance-support workflows that organize records and make evidence easier to retrieve.",
+        icon: "FileCheck",
+      },
+      {
+        title: "Scaling Without Financial Service Disruption",
+        desc: "Transaction spikes, database bottlenecks, and external service dependencies can degrade performance or interrupt critical workflows.",
+        solution: "We engineer resilient financial platforms with operational visibility and capacity planning to support growing transaction workloads.",
+        icon: "ServerCog",
+      },
+    ],
+  },
+  },
+healthcare: {
     slug: "healthcare",
     operatingCapabilities: {
       kicker: "HEALTHCARE TECH · SECURE CARE",
-      title: "Technology that fits your operating reality.",
+      title: "Connected technology for better care operations.",
       intro:
-        "Patient data security, clinical workflow automation, and compliant system integrations engineered for healthcare providers who operate under strict regulatory scrutiny.",
+        "Secure patient experiences, coordinated clinical workflows, and interoperable health systems engineered to help care teams work with clearer information and less administrative friction.",
       items: [
         {
-          title: "Secure Patient Data & Role-Based Access",
-          desc: "Encrypted patient records, granular role permissions, and audit logging that satisfies healthcare data protection requirements.",
+          title: "Patient Records & Secure Data Access",
+          desc: "Patient profiles, care histories, role-aware permissions, and traceable access workflows designed to help protect sensitive health information.",
         },
         {
-          title: "Appointment Scheduling & Clinical Workflows",
-          desc: "Intelligent appointment booking, doctor scheduling, and patient flow management that reduces administrative overhead.",
+          title: "Appointments & Care Coordination",
+          desc: "Appointment booking, provider scheduling, reminders, waitlist handling, and coordinated workflows that help reduce avoidable administrative delays.",
         },
         {
-          title: "Healthcare System Integrations",
-          desc: "HL7/FHIR-compatible connectors, EMR system integration, and interoperability layers that connect disparate clinical systems.",
+          title: "Clinical Interoperability & System Connectivity",
+          desc: "Integrations between EMR/EHR platforms, laboratories, pharmacies, and clinical services that help authorized teams work from more consistent information.",
         },
         {
           title: "Medical Data Processing & Reporting",
-          desc: "Structured health record processing, lab result aggregation, and compliance-ready clinical reporting dashboards.",
+          desc: "Structured clinical information, lab result aggregation, document processing, and configurable reporting that supports day-to-day clinical and administrative work.",
         },
         {
-          title: "Privacy, Auditability & Service Availability",
-          desc: "End-to-end encryption, immutable access logs, and 99.99% uptime infrastructure designed for mission-critical healthcare operations.",
+          title: "Patient Engagement & Remote Care",
+          desc: "Patient portals, follow-up reminders, telehealth workflows, and care-plan communication that make it easier for patients and providers to stay connected.",
+        },
+        {
+          title: "Healthcare Security & Service Continuity",
+          desc: "Access reviews, encryption practices, operational monitoring, backup planning, and recovery workflows designed around the importance of clinical information availability.",
         },
       ],
     },
@@ -289,63 +414,107 @@ export const industryData: Record<string, IndustryPageContent> = {
       kicker: "DISCIPLINES APPLIED",
       title: "How we engineer healthcare solutions.",
       intro:
-        "Compliant platforms for patient engagement, AI-assisted diagnostics support, and secure integrations with clinical systems.",
+        "Patient-facing applications, clinical workflow automation, and secure data connections designed to support healthcare organizations and their teams.",
       items: [
         {
-          kicker: "CUSTOM WEB & MOBILE APPS",
-          title: "Engineering",
+          kicker: "DIGITAL CARE EXPERIENCES",
+          title: "Product Engineering",
           intro:
-            "Patient portals, clinical dashboards, and mobile health apps with HIPAA-aligned data handling and role-based access.",
+            "Patient portals, provider dashboards, and care-management applications shaped around real clinical and administrative workflows.",
           features: [
-            "Product strategy and technical discovery",
-            "Custom web platforms and client portals",
-            "Native iOS and Android applications",
-            "Secure APIs, roles and workflows",
-            "Performance engineering and accessibility",
-            "Full source-code and IP handover",
+            "Patient portals and appointment applications",
+            "Provider dashboards and clinic management tools",
+            "Patient profiles and care-history experiences",
+            "Role-aware access and workflow design",
+            "Responsive interfaces and accessibility",
+            "Source-code ownership and technical handover",
           ],
         },
         {
-          kicker: "PRACTICAL AI SYSTEMS",
+          kicker: "CLINICAL WORKFLOW INTELLIGENCE",
           title: "AI & Automation",
           intro:
-            "Clinical decision support, patient data extraction from documents, and automated appointment reminder workflows.",
+            "Administrative automation and carefully scoped AI assistance for clinical documents, patient communication, and operational information handling.",
           features: [
-            "Private company knowledge search",
-            "Document extraction and OCR",
-            "AI assistants with approval steps",
-            "Customer support automation",
-            "Workflow and task orchestration",
-            "Evaluation, guardrails and audit trails",
+            "Clinical document classification and extraction",
+            "Medical record search and summarization support",
+            "Appointment reminders and follow-up workflows",
+            "Intake form processing and data capture",
+            "Administrative task routing and automation",
+            "Human review, audit trails, and AI evaluation",
           ],
         },
         {
-          kicker: "INSTANT SYNC & CONNECTIONS",
+          kicker: "CONNECTED HEALTH SYSTEMS",
           title: "Integrations",
           intro:
-            "EMR/EHR connectors, lab system integrations, and real-time patient data synchronization across clinical touchpoints.",
+            "Data exchange between approved clinical systems, laboratories, patient communication tools, and operational platforms.",
           features: [
-            "Instant data sync between systems",
-            "Payment and WhatsApp integrations",
-            "Reliable queues and retries",
-            "API design and documentation",
-            "Event-driven workflows",
-            "Integration monitoring",
+            "EMR/EHR and clinical system integrations",
+            "HL7/FHIR-oriented interoperability planning",
+            "Laboratory and diagnostic service connectivity",
+            "Validated API and webhook workflows",
+            "Appointment, messaging, and payment integrations",
+            "Integration monitoring and failure recovery",
           ],
         },
         {
-          kicker: "CLOUD & 24/7 RELIABILITY",
+          kicker: "SECURE CLINICAL OPERATIONS",
           title: "Cloud & DevOps",
           intro:
-            "Healthcare-grade cloud infrastructure with encryption, disaster recovery, and uptime SLAs aligned with clinical requirements.",
+            "Infrastructure and release practices designed to support data protection, operational visibility, and recovery for healthcare applications.",
           features: [
-            "Cloud architecture and migration",
-            "Automated scaling and recovery",
-            "Zero-downtime releases",
-            "Security and backup policies",
-            "Observability and incident response",
-            "Cloud cost reviews",
+            "Cloud architecture and migration planning",
+            "Encryption and secrets management",
+            "Environment separation and controlled releases",
+            "Monitoring, logging, and incident alerting",
+            "Backup, restore testing, and recovery planning",
+            "Security reviews and infrastructure cost management",
           ],
+        },
+      ],
+    },
+    engineeringChallenges: {
+      kicker: "ENGINEERED FOR REAL-WORLD CARE",
+      title: "Six challenges that complicate healthcare delivery.",
+      intro:
+        "Healthcare teams often work across busy schedules, sensitive records, and systems that were not designed to communicate. We build digital solutions that help make care operations more coordinated, secure, and visible.",
+      items: [
+        {
+          title: "Fragmented Patient Records",
+          desc: "Patient information spread across disconnected systems can create duplicate data, incomplete histories, and extra work for clinical teams.",
+          solution: "We connect approved systems and shape clearer patient information workflows so authorized teams can access more consistent records.",
+          icon: "Files",
+        },
+        {
+          title: "Patient Privacy & Access Control Gaps",
+          desc: "Broad permissions, inconsistent identity controls, and limited access visibility can expose sensitive information or make reviews difficult.",
+          solution: "We build healthcare applications with controlled access, clearer data boundaries, and traceable activity designed around your governance needs.",
+          icon: "ShieldCheck",
+        },
+        {
+          title: "Appointment Delays & Administrative Overload",
+          desc: "Manual scheduling, missed reminders, and disconnected provider calendars can lead to avoidable delays and underused appointment capacity.",
+          solution: "We streamline booking, reminders, and scheduling workflows to help patients and staff coordinate appointments more efficiently.",
+          icon: "CalendarClock",
+        },
+        {
+          title: "Clinical System Integration Barriers",
+          desc: "Different data formats and legacy systems can make it difficult to exchange lab results, referrals, and clinical updates reliably.",
+          solution: "We create integration pathways that help authorized systems exchange information with clearer validation and status visibility.",
+          icon: "Network",
+        },
+        {
+          title: "Manual Documentation & Reporting Burden",
+          desc: "Repeated data entry, paper-heavy processes, and fragmented reports consume staff time and increase the chance of administrative errors.",
+          solution: "We automate appropriate document and reporting workflows while keeping human review available for sensitive or consequential decisions.",
+          icon: "FileText",
+        },
+        {
+          title: "Service Interruptions & Recovery Risks",
+          desc: "Unplanned outages, untested backups, and weak operational monitoring can make essential systems difficult to access when teams need them.",
+          solution: "We improve platform observability, release discipline, and recovery preparation to support more dependable healthcare operations.",
+          icon: "Activity",
         },
       ],
     },
@@ -357,31 +526,31 @@ export const industryData: Record<string, IndustryPageContent> = {
       kicker: "E-COMMERCE · COMMERCE CAPABILITIES",
       title: "More than a storefront. An engineered commerce ecosystem.",
       intro:
-        "From intelligent product discovery to dependable checkout and scalable infrastructure, we build the capabilities that help e-commerce businesses deliver better shopping experiences, operate efficiently, and grow with confidence.",
+        "From product discovery to checkout, fulfillment, and post-purchase service, we build commerce capabilities that improve shopping experiences and help teams operate with confidence.",
       items: [
         {
-          title: "AI-Powered Commerce & Discovery",
-          desc: "Intelligent shopping assistants, catalogue-aware recommendations, and conversational product discovery powered by LLMs, RAG, Spring AI, and vector search — helping shoppers find exactly what they need.",
+          title: "AI-Powered Commerce & Product Discovery",
+          desc: "Shopping assistants, catalogue-aware search, conversational discovery, and relevant product suggestions that help customers find suitable products faster.",
         },
         {
-          title: "Visual Search & Personalization",
-          desc: "Image-based product discovery, multimodal search, and personalised recommendations using computer vision, product embeddings, and recommendation engines tailored to your catalogue.",
+          title: "Visual Search & Personalized Shopping",
+          desc: "Image-led discovery, customer preference signals, and tailored product journeys that make large or complex catalogues easier to explore.",
         },
         {
-          title: "Real-Time Commerce & Integrations",
-          desc: "Event-driven inventory synchronization, live order tracking, payment connectivity, and automated notifications powered by Kafka, reliable APIs, and WebSockets that keep systems in sync.",
+          title: "Real-Time Orders & Commerce Integrations",
+          desc: "Order status visibility, inventory synchronization, payment connectivity, shipping updates, and notifications across connected commerce systems.",
         },
         {
-          title: "Predictive Intelligence & Pricing",
-          desc: "Price history, intelligent discount alerts, demand forecasting, and stockout prevention using predictive analytics, machine learning, and historical commerce data.",
+          title: "Demand Intelligence & Pricing Workflows",
+          desc: "Sales trends, demand signals, promotion insights, replenishment indicators, and pricing workflows that support better merchandising decisions.",
         },
         {
-          title: "Secure Transactions & Trust",
-          desc: "Protected checkout, fraud-risk detection, verified purchases, role-based access, encrypted data, and traceable audit logs built around secure payment workflows.",
+          title: "Secure Checkout & Customer Trust",
+          desc: "Reliable checkout journeys, transaction tracking, customer account protection, order histories, and traceable operational actions.",
         },
         {
-          title: "Scalable Commerce Infrastructure",
-          desc: "Production-ready storefronts, resilient backend services, Redis caching, automated testing, cloud deployment, and end-to-end observability designed to grow with your business.",
+          title: "Scalable Storefront & Commerce Operations",
+          desc: "Responsive storefronts, efficient catalogue experiences, operational dashboards, performance monitoring, and infrastructure prepared for traffic growth.",
         },
       ],
     },
@@ -389,62 +558,62 @@ export const industryData: Record<string, IndustryPageContent> = {
       kicker: "DISCIPLINES APPLIED",
       title: "How we engineer e-commerce solutions.",
       intro:
-        "Scalable storefronts, intelligent integrations with fulfillment systems, and cloud infrastructure optimized for peak conversion events.",
+        "High-performing shopping experiences, connected fulfillment workflows, and reliable commerce infrastructure designed around conversion, customer trust, and operational clarity.",
       items: [
         {
-          kicker: "CUSTOM WEB & MOBILE APPS",
-          title: "Engineering",
+          kicker: "STOREFRONTS & CUSTOMER JOURNEYS",
+          title: "Product Engineering",
           intro:
-            "High-performance storefronts, seller dashboards, and customer mobile apps built for speed and conversion optimization.",
+            "Customer storefronts, seller portals, and commerce operations dashboards focused on clear product discovery and efficient purchasing.",
           features: [
-            "Product strategy and technical discovery",
-            "Custom web platforms and client portals",
-            "Native iOS and Android applications",
-            "Secure APIs, roles and workflows",
-            "Performance engineering and accessibility",
-            "Full source-code and IP handover",
+            "Custom storefronts and shopping experiences",
+            "Product catalogue and search interfaces",
+            "Cart, checkout, and order-management workflows",
+            "Customer, seller, and administrator portals",
+            "Responsive performance and accessibility",
+            "Source-code ownership and technical handover",
           ],
         },
         {
-          kicker: "PRACTICAL AI SYSTEMS",
+          kicker: "COMMERCE INTELLIGENCE",
           title: "AI & Automation",
           intro:
-            "Personalized product recommendations, demand forecasting, and automated customer support for high-volume storefronts.",
+            "Product discovery assistance, merchandising insights, and automated customer operations tailored to your catalogue and workflows.",
           features: [
-            "Private company knowledge search",
-            "Document extraction and OCR",
-            "AI assistants with approval steps",
-            "Customer support automation",
-            "Workflow and task orchestration",
-            "Evaluation, guardrails and audit trails",
+            "Catalogue-aware shopping assistants",
+            "Personalized product recommendations",
+            "Visual product discovery experiences",
+            "Demand and sales trend analysis",
+            "Customer service and order-status automation",
+            "Human review, evaluation, and guardrails",
           ],
         },
         {
-          kicker: "INSTANT SYNC & CONNECTIONS",
+          kicker: "PAYMENTS, ORDERS & FULFILLMENT",
           title: "Integrations",
           intro:
-            "Payment gateway orchestration, shipping carrier APIs, ERP connectors, and inventory sync across multi-channel storefronts.",
+            "Connected payment, shipping, inventory, and business systems that keep commerce operations aligned from purchase through delivery.",
           features: [
-            "Instant data sync between systems",
-            "Payment and WhatsApp integrations",
-            "Reliable queues and retries",
-            "API design and documentation",
-            "Event-driven workflows",
-            "Integration monitoring",
+            "Payment gateway and checkout integrations",
+            "Shipping carrier and fulfillment connectivity",
+            "Inventory, ERP, and marketplace synchronization",
+            "Order events and delivery notifications",
+            "Resilient webhooks and retry workflows",
+            "Integration monitoring and reconciliation support",
           ],
         },
         {
-          kicker: "CLOUD & 24/7 RELIABILITY",
+          kicker: "PEAK-READY COMMERCE INFRASTRUCTURE",
           title: "Cloud & DevOps",
           intro:
-            "Auto-scaling cloud infrastructure, CDN-optimized media delivery, and CI/CD pipelines designed for peak traffic seasons.",
+            "Deployment, performance, and monitoring practices designed to support promotions, seasonal peaks, and continued storefront growth.",
           features: [
-            "Cloud architecture and migration",
-            "Automated scaling and recovery",
-            "Zero-downtime releases",
-            "Security and backup policies",
-            "Observability and incident response",
-            "Cloud cost reviews",
+            "Cloud architecture and infrastructure migration",
+            "Caching and content delivery planning",
+            "Automated testing and release pipelines",
+            "Traffic, error, and performance monitoring",
+            "Security, backup, and recovery practices",
+            "Capacity planning and cloud cost reviews",
           ],
         },
       ],
@@ -453,43 +622,43 @@ export const industryData: Record<string, IndustryPageContent> = {
       kicker: "ENGINEERED FOR REAL-WORLD COMMERCE",
       title: "Six challenges that can make or break an online business.",
       intro:
-        "Behind every successful shopping experience is an engineering system designed to handle traffic, protect transactions, maintain accurate data, and recover when unexpected failures occur. We understand these challenges and build commerce platforms designed around them.",
+        "Behind a smooth shopping experience is a system that must handle traffic, protect transactions, maintain accurate stock, and recover when connected services fail. We engineer commerce platforms with these challenges in mind.",
       items: [
         {
-          title: "Traffic Spikes & Performance Degradation",
-          desc: "Traffic surges during sales, campaigns, and launches can overwhelm servers, exhaust caches, and slow databases—leading to slow pages, failed requests, and lost revenue.",
-          solution: "We build auto-scaling storefronts with edge caching and CDN-backed media so your store stays fast and accessible when demand peaks.",
-          icon: "TrafficSignal",
+          title: "Traffic Spikes & Slow Storefronts",
+          desc: "Sales, campaigns, and product launches can overwhelm application resources and slow pages or APIs when customers are ready to buy.",
+          solution: "We build performance-focused storefronts and scalable application foundations designed to keep key shopping journeys responsive during demand peaks.",
+          icon: "Gauge",
         },
         {
-          title: "Checkout Failures & Transaction Integrity",
-          desc: "Payment timeouts, interrupted sessions, duplicate orders, and uncertain payment status are the most damaging failures for shopper trust.",
-          solution: "We engineer dependable checkout with idempotent operations, clear status tracking, and resilient payment integrations that protect transactions.",
-          icon: "ReceiptX",
+          title: "Checkout Failures & Unclear Payment Status",
+          desc: "Payment timeouts, interrupted sessions, and duplicate requests can leave shoppers unsure whether an order or charge was completed.",
+          solution: "We engineer clear checkout and transaction workflows that improve payment status visibility and help protect against duplicate operations.",
+          icon: "CreditCard",
         },
         {
-          title: "Inventory Inconsistency & Overselling",
-          desc: "Simultaneous purchases, delayed stock updates, and inconsistent data across channels lead to overselling and damage brand reputation.",
-          solution: "We build atomic reservation logic and real-time stock sync to improve accuracy and prevent overselling across channels.",
+          title: "Inventory Mismatch & Overselling",
+          desc: "Concurrent purchases and delayed stock updates across marketplaces or warehouses can cause orders for items that are no longer available.",
+          solution: "We create stock coordination and order validation workflows that help keep availability consistent across connected sales channels.",
           icon: "Warehouse",
         },
         {
-          title: "Database Bottlenecks & Data Synchronization",
-          desc: "Slow queries, growing catalogs, and inconsistent records across commerce platforms and payment systems compound over time.",
-          solution: "We engineer efficient data systems with smart schema design, caching, and resilient integrations for fast access and reliable sync.",
+          title: "Disconnected Data & Commerce Integrations",
+          desc: "Inconsistent product, order, customer, and fulfillment data across separate tools can create delays and manual reconciliation work.",
+          solution: "We connect commerce systems through monitored integration workflows that make data exchange more consistent and easier to troubleshoot.",
           icon: "Database",
         },
         {
-          title: "Product Discovery, Search & Personalization",
-          desc: "Poor search relevance, slow filters, zero-result queries, and irrelevant recommendations prevent customers from finding products.",
-          solution: "We build AI-powered search, vector-based recommendations, and personalised merchandising to help shoppers find products faster.",
-          icon: "Binoculars",
+          title: "Weak Product Discovery & Irrelevant Results",
+          desc: "Poor search relevance, hard-to-use filters, and generic recommendations can make it difficult for shoppers to find products.",
+          solution: "We improve discovery experiences with catalogue-aware search, useful filtering, and personalization aligned with your product data.",
+          icon: "Search",
         },
         {
-          title: "Production Failures, Security & Infrastructure Costs",
-          desc: "Deployment regressions, third-party outages, stuck jobs, security threats, and rising infrastructure costs are realities every growing commerce team must manage.",
-          solution: "We build with cloud-native architecture, automated testing, and full observability for reliability, security, and controlled costs.",
-          icon: "WarningCircle",
+          title: "Production Incidents & Rising Operating Costs",
+          desc: "Releases, third-party failures, background-job issues, and inefficient infrastructure can affect service quality and cost control.",
+          solution: "We improve operational visibility, release practices, and performance management to help teams address issues sooner and manage infrastructure deliberately.",
+          icon: "CloudCog",
         },
       ],
     },
@@ -499,29 +668,33 @@ export const industryData: Record<string, IndustryPageContent> = {
     slug: "edtech",
     operatingCapabilities: {
       kicker: "EDTECH · LEARNING TECHNOLOGY",
-      title: "Technology that fits your operating reality.",
+      title: "Learning experiences built for access, progress, and trust.",
       intro:
-        "Scalable learning platforms, secure online assessments, and real-time student analytics engineered for educational institutions that demand reliability and fairness.",
+        "Scalable learning environments, dependable assessments, and actionable learner insights engineered for institutions and education businesses serving growing student populations.",
       items: [
         {
-          title: "Learning Management & Course Delivery",
-          desc: "Structured course pipelines, progress tracking, and multi-format content delivery that supports self-paced and instructor-led learning.",
+          title: "Learning Delivery & Course Management",
+          desc: "Structured courses, learning paths, progress tracking, content libraries, and instructor-led workflows for different teaching models.",
         },
         {
-          title: "Assessments & Online Proctoring",
-          desc: "AI-assisted examination monitoring, browser lockdown, identity verification, and evidence-captured proctoring for exam integrity.",
+          title: "Secure Assessments & Exam Integrity",
+          desc: "Online tests, identity checks, proctoring workflows, controlled exam sessions, and evidence review tools that support fair assessment processes.",
         },
         {
-          title: "Student Progress & Learning Analytics",
-          desc: "Granular performance dashboards, competency mapping, and predictive analytics that identify at-risk students before they fall behind.",
+          title: "Learner Progress & Performance Analytics",
+          desc: "Progress dashboards, competency tracking, assessment trends, and engagement indicators that help educators understand learner needs.",
         },
         {
-          title: "Video & Content Delivery at Scale",
-          desc: "Adaptive bitrate streaming, offline-capable content caching, and DRM-protected media delivery for reliable access across devices.",
+          title: "Video Learning & Digital Content Delivery",
+          desc: "Accessible course media, device-aware playback, content organization, and delivery workflows designed for learners across different network conditions.",
         },
         {
-          title: "Instructor Workflows & Institutional Integration",
-          desc: "Grade management, assignment workflows, SIS integration, and role-based access for teachers, administrators, and students.",
+          title: "Instructor & Institutional Workflows",
+          desc: "Assignment management, grading, class administration, enrolment processes, and integrations with institutional systems.",
+        },
+        {
+          title: "Accessible, Secure Learning Infrastructure",
+          desc: "Role-aware access, privacy-conscious learner records, platform monitoring, and capacity planning for busy learning and examination periods.",
         },
       ],
     },
@@ -529,63 +702,107 @@ export const industryData: Record<string, IndustryPageContent> = {
       kicker: "DISCIPLINES APPLIED",
       title: "How we engineer edtech solutions.",
       intro:
-        "Custom LMS platforms, AI-powered assessment tools, and cloud infrastructure designed for institutional-scale student populations.",
+        "Custom learning platforms, assessment tools, connected educational workflows, and scalable delivery infrastructure designed around learners and educators.",
       items: [
         {
-          kicker: "CUSTOM WEB & MOBILE APPS",
-          title: "Engineering",
+          kicker: "LEARNING PLATFORMS & CLASSROOMS",
+          title: "Product Engineering",
           intro:
-            "Responsive learning platforms, student portals, and instructor dashboards that work reliably on any device, anywhere.",
+            "LMS platforms, student portals, instructor dashboards, and assessment interfaces shaped around course delivery and institutional workflows.",
           features: [
-            "Product strategy and technical discovery",
-            "Custom web platforms and client portals",
-            "Native iOS and Android applications",
-            "Secure APIs, roles and workflows",
-            "Performance engineering and accessibility",
-            "Full source-code and IP handover",
+            "Learning management systems and course portals",
+            "Student, instructor, and administrator dashboards",
+            "Assessment, assignment, and grading workflows",
+            "Enrollment and class management experiences",
+            "Responsive design and accessibility",
+            "Source-code ownership and technical handover",
           ],
         },
         {
-          kicker: "PRACTICAL AI SYSTEMS",
+          kicker: "LEARNING & ASSESSMENT INTELLIGENCE",
           title: "AI & Automation",
           intro:
-            "Proctoring intelligence, automated grading support, and personalized learning path recommendations based on student performance data.",
+            "Carefully scoped AI and automation for content support, learner assistance, assessment operations, and progress insights.",
           features: [
-            "Private company knowledge search",
-            "Document extraction and OCR",
-            "AI assistants with approval steps",
-            "Customer support automation",
-            "Workflow and task orchestration",
-            "Evaluation, guardrails and audit trails",
+            "Course-content search and learning assistants",
+            "Question generation support and content organization",
+            "Automated grading assistance with educator review",
+            "Proctoring evidence organization and review support",
+            "Learner progress and engagement insights",
+            "Evaluation, safeguards, and audit trails",
           ],
         },
         {
-          kicker: "INSTANT SYNC & CONNECTIONS",
+          kicker: "CONNECTED EDUCATION ECOSYSTEMS",
           title: "Integrations",
           intro:
-            "SIS connectors, payment integrations for course fees, third-party content tools, and real-time class sync across platforms.",
+            "Connected student information, identity, payment, communication, and content systems that reduce duplicated administrative effort.",
           features: [
-            "Instant data sync between systems",
-            "Payment and WhatsApp integrations",
-            "Reliable queues and retries",
-            "API design and documentation",
-            "Event-driven workflows",
-            "Integration monitoring",
+            "Student information system integrations",
+            "Identity and single sign-on connectivity",
+            "Course fee and payment integrations",
+            "Video, content, and virtual classroom connections",
+            "Notifications and dependable background workflows",
+            "API documentation and integration monitoring",
           ],
         },
         {
-          kicker: "CLOUD & 24/7 RELIABILITY",
+          kicker: "EXAM-READY CLOUD OPERATIONS",
           title: "Cloud & DevOps",
           intro:
-            "Scalable cloud infrastructure for exam-day traffic spikes, media delivery optimization, and 24/7 platform availability.",
+            "Release and infrastructure practices designed for examination peaks, media delivery demand, and dependable access to learning resources.",
           features: [
-            "Cloud architecture and migration",
-            "Automated scaling and recovery",
-            "Zero-downtime releases",
-            "Security and backup policies",
-            "Observability and incident response",
-            "Cloud cost reviews",
+            "Cloud architecture and migration planning",
+            "Load and performance testing for peak sessions",
+            "Automated testing and controlled releases",
+            "Media delivery and caching optimization",
+            "Monitoring, backups, and recovery planning",
+            "Security and cloud cost management",
           ],
+        },
+      ],
+    },
+    engineeringChallenges: {
+      kicker: "ENGINEERED FOR BETTER LEARNING",
+      title: "Six challenges that disrupt digital education.",
+      intro:
+        "Education platforms must serve learners at scale, protect assessment integrity, and make progress visible to educators. We build digital learning systems that address common operational and experience gaps.",
+      items: [
+        {
+          title: "Exam-Day Traffic & Platform Slowdowns",
+          desc: "Large groups starting exams or live sessions at the same time can strain authentication, assessment delivery, and database resources.",
+          solution: "We design learning workflows and infrastructure around expected peak activity, with performance testing and clearer platform monitoring.",
+          icon: "Gauge",
+        },
+        {
+          title: "Assessment Integrity & Identity Concerns",
+          desc: "Impersonation, unauthorized resources, and suspicious exam activity can undermine confidence in online assessments.",
+          solution: "We build assessment and review workflows that support identity checks, configurable monitoring, and evidence-based human review.",
+          icon: "ShieldCheck",
+        },
+        {
+          title: "Low Engagement & Limited Progress Visibility",
+          desc: "Scattered learning records and delayed feedback can make it hard to spot learners who are struggling or disengaging.",
+          solution: "We provide clearer progress dashboards and learning activity insights that help educators identify where support may be needed.",
+          icon: "ChartNoAxesCombined",
+        },
+        {
+          title: "Video Delivery & Content Access Problems",
+          desc: "Large media files, inconsistent connectivity, and inefficient content delivery can interrupt lessons and frustrate learners.",
+          solution: "We optimize learning content experiences and delivery workflows to support smoother access across devices and network conditions.",
+          icon: "Video",
+        },
+        {
+          title: "Manual Grading & Administrative Work",
+          desc: "Repetitive grading, attendance updates, enrolment tasks, and report preparation consume educator and administrator time.",
+          solution: "We automate appropriate administrative tasks and provide educator-controlled tools that reduce repetitive work without removing oversight.",
+          icon: "ClipboardCheck",
+        },
+        {
+          title: "Fragmented Student Data & Privacy Risks",
+          desc: "Disconnected institutional tools can create conflicting learner records, while weak permissions can expose sensitive education data.",
+          solution: "We connect authorized systems and build role-aware access workflows that support consistent records and privacy-conscious operations.",
+          icon: "Database",
         },
       ],
     },
@@ -595,29 +812,33 @@ export const industryData: Record<string, IndustryPageContent> = {
     slug: "inventory",
     operatingCapabilities: {
       kicker: "INVENTORY · STOCK INTELLIGENCE",
-      title: "Technology that fits your operating reality.",
+      title: "Control every movement. See every stock position.",
       intro:
-        "Real-time stock visibility, warehouse management, and traceable inventory operations engineered for businesses that need precision across every location.",
+        "Connected inventory operations, location-level visibility, and traceable stock movement engineered for businesses that need dependable control from procurement to dispatch.",
       items: [
         {
-          title: "Real-Time Stock Visibility & Movement Tracking",
-          desc: "Live stock dashboards, inbound/outbound movement logging, and location-level visibility that eliminates blind spots in your supply chain.",
+          title: "Live Stock Visibility & Movement History",
+          desc: "Current stock positions, stock adjustments, inbound and outbound movements, and traceable item histories across operating locations.",
         },
         {
-          title: "Multi-Location Warehouse Management",
-          desc: "Centralized control across warehouses, bins, and shelves with transfer orders, putaway logic, and cross-location stock balancing.",
+          title: "Multi-Warehouse & Location Management",
+          desc: "Central stock oversight, warehouse transfers, bin and shelf organization, and location-level controls that help teams coordinate distributed inventory.",
         },
         {
-          title: "Purchase Orders & Supplier Integrations",
-          desc: "Automated PO generation, supplier portal access, and GRN workflows that streamline procurement from requisition to receipt.",
+          title: "Procurement & Supplier Coordination",
+          desc: "Purchase requests, purchase orders, goods-received workflows, supplier records, and replenishment processes that connect buying with stock availability.",
         },
         {
-          title: "Barcode Operations & Product Traceability",
-          desc: "Barcode and QR-based scanning, batch tracking, expiry monitoring, and full traceability from receipt to dispatch.",
+          title: "Barcode, Batch & Item Traceability",
+          desc: "Barcode and QR workflows, serial and batch records, expiry tracking, and item-level traceability from receipt through dispatch.",
         },
         {
-          title: "Stock Reconciliation & Low-Stock Alerts",
-          desc: "Automated cycle counts, variance detection, reorder point alerts, and audit history that keeps your records accurate and actionable.",
+          title: "Reconciliation & Replenishment Intelligence",
+          desc: "Cycle counts, variance tracking, reorder alerts, and stock movement summaries that help teams maintain more reliable records.",
+        },
+        {
+          title: "Inventory Reporting & System Connectivity",
+          desc: "Operational dashboards, audit histories, and connections with accounting, ERP, sales, and fulfillment systems for a clearer stock picture.",
         },
       ],
     },
@@ -625,63 +846,107 @@ export const industryData: Record<string, IndustryPageContent> = {
       kicker: "DISCIPLINES APPLIED",
       title: "How we engineer inventory solutions.",
       intro:
-        "Custom warehouse management platforms, barcode-integrated tracking systems, and real-time dashboards that give you complete stock control.",
+        "Warehouse workflows, practical scanning interfaces, and connected inventory data that help teams reduce manual reconciliation and make better stock decisions.",
       items: [
         {
-          kicker: "CUSTOM WEB & MOBILE APPS",
-          title: "Engineering",
+          kicker: "WAREHOUSE & STOCK CONTROL",
+          title: "Product Engineering",
           intro:
-            "Responsive inventory dashboards, mobile scanning interfaces, and warehouse management tools built for speed and accuracy.",
+            "Inventory dashboards, warehouse tools, and mobile scanning experiences shaped around how stock is received, stored, moved, and dispatched.",
           features: [
-            "Product strategy and technical discovery",
-            "Custom web platforms and client portals",
-            "Native iOS and Android applications",
-            "Secure APIs, roles and workflows",
-            "Performance engineering and accessibility",
-            "Full source-code and IP handover",
+            "Inventory and warehouse management applications",
+            "Stock movement and adjustment workflows",
+            "Multi-location transfer and bin management",
+            "Barcode and QR scanning interfaces",
+            "Role-aware operations dashboards",
+            "Source-code ownership and technical handover",
           ],
         },
         {
-          kicker: "PRACTICAL AI SYSTEMS",
+          kicker: "STOCK INTELLIGENCE & AUTOMATION",
           title: "AI & Automation",
           intro:
-            "Demand forecasting, automated reorder suggestions, and anomaly detection for stock discrepancies and shrinkage.",
+            "Forecasting support, exception detection, and automated stock workflows that help teams respond to changing demand and discrepancies.",
           features: [
-            "Private company knowledge search",
-            "Document extraction and OCR",
-            "AI assistants with approval steps",
-            "Customer support automation",
-            "Workflow and task orchestration",
-            "Evaluation, guardrails and audit trails",
+            "Demand and replenishment trend analysis",
+            "Low-stock and unusual movement alerts",
+            "Document extraction for purchase records",
+            "Automated stock and approval workflows",
+            "Expiry and batch monitoring support",
+            "Reviewable recommendations and audit trails",
           ],
         },
         {
-          kicker: "INSTANT SYNC & CONNECTIONS",
+          kicker: "ERP, PROCUREMENT & SALES SYSTEMS",
           title: "Integrations",
           intro:
-            "ERP sync, barcode scanner integrations, supplier system connectors, and real-time stock updates across all channels.",
+            "Connected stock records across purchasing, accounting, sales channels, scanners, and fulfillment tools.",
           features: [
-            "Instant data sync between systems",
-            "Payment and WhatsApp integrations",
-            "Reliable queues and retries",
-            "API design and documentation",
-            "Event-driven workflows",
-            "Integration monitoring",
+            "ERP and accounting system connectivity",
+            "Supplier and purchase-order workflows",
+            "Sales channel and order synchronization",
+            "Barcode scanner and device integration",
+            "Inventory event processing and retries",
+            "Data validation and integration monitoring",
           ],
         },
         {
-          kicker: "CLOUD & 24/7 RELIABILITY",
+          kicker: "RELIABLE INVENTORY OPERATIONS",
           title: "Cloud & DevOps",
           intro:
-            "Cloud-hosted inventory platforms with offline-capable mobile apps, real-time data sync, and uptime for continuous operations.",
+            "Deployments and infrastructure that support warehouse teams, reliable data access, and recovery from operational interruptions.",
           features: [
-            "Cloud architecture and migration",
-            "Automated scaling and recovery",
-            "Zero-downtime releases",
-            "Security and backup policies",
-            "Observability and incident response",
-            "Cloud cost reviews",
+            "Cloud architecture and migration planning",
+            "Performance and database optimization",
+            "Automated testing and controlled deployments",
+            "Operational monitoring and alerts",
+            "Backup, restore, and recovery planning",
+            "Security and infrastructure cost management",
           ],
+        },
+      ],
+    },
+    engineeringChallenges: {
+      kicker: "ENGINEERED FOR STOCK ACCURACY",
+      title: "Six challenges that create inventory blind spots.",
+      intro:
+        "Inventory problems often begin with delayed updates, fragmented records, or manual processes that cannot keep pace with daily operations. We build connected systems that improve visibility and control.",
+      items: [
+        {
+          title: "Inaccurate Stock Counts & Record Mismatches",
+          desc: "Manual adjustments, missed scans, and delayed updates can cause system quantities to differ from physical stock.",
+          solution: "We design traceable stock movement and reconciliation workflows that make discrepancies easier to identify and investigate.",
+          icon: "ClipboardList",
+        },
+        {
+          title: "Multi-Location Stock Synchronization",
+          desc: "Warehouses, stores, and sales channels may operate on different records, leading to delayed transfers and uncertain availability.",
+          solution: "We connect inventory operations and provide clearer location-level stock visibility across authorized systems.",
+          icon: "Warehouse",
+        },
+        {
+          title: "Stockouts, Overstock & Poor Replenishment",
+          desc: "Limited demand visibility and inconsistent reorder practices can tie up cash in excess stock or leave essential products unavailable.",
+          solution: "We provide stock trend visibility and configurable replenishment workflows to support more informed purchasing decisions.",
+          icon: "TrendingUp",
+        },
+        {
+          title: "Barcode Errors & Weak Item Traceability",
+          desc: "Incorrect identifiers, incomplete batch records, and missed scans make items harder to track through receiving, storage, and dispatch.",
+          solution: "We build scanning and traceability workflows that help teams capture consistent item, batch, and movement information.",
+          icon: "ScanBarcode",
+        },
+        {
+          title: "Supplier Delays & Procurement Gaps",
+          desc: "Unclear purchase-order status, fragmented supplier communications, and delayed goods receipt can disrupt replenishment plans.",
+          solution: "We connect supplier, purchasing, and receipt workflows so teams can track procurement progress with greater clarity.",
+          icon: "Truck",
+        },
+        {
+          title: "Reporting Delays & Operational Downtime",
+          desc: "Slow reports, unreliable connections, and unavailable systems can prevent staff from making timely stock decisions.",
+          solution: "We improve reporting efficiency, operational monitoring, and recovery planning to support dependable inventory access.",
+          icon: "ChartNoAxesCombined",
         },
       ],
     },
@@ -691,29 +956,33 @@ export const industryData: Record<string, IndustryPageContent> = {
     slug: "logistics",
     operatingCapabilities: {
       kicker: "LOGISTICS & FLEET · MOVING SMART",
-      title: "Technology that fits your operating reality.",
+      title: "Greater visibility across every delivery journey.",
       intro:
-        "End-to-end shipment tracking, route intelligence, and fleet visibility engineered for logistics operations where on-time delivery is the only metric that matters.",
+        "Connected shipment tracking, dispatch coordination, and operational intelligence engineered for logistics teams that need clearer control from pickup to proof of delivery.",
       items: [
         {
-          title: "Shipment Lifecycle & Delivery Tracking",
-          desc: "End-to-end shipment visibility from pickup to proof of delivery, with real-time status updates and customer-facing tracking portals.",
+          title: "Shipment Lifecycle & Live Tracking",
+          desc: "Shipment status visibility, milestone updates, customer tracking experiences, and delivery records from pickup through completion.",
         },
         {
           title: "Route Planning & Fleet Visibility",
-          desc: "GPS-powered route optimization, live fleet tracking, and ETA predictions that reduce fuel costs and improve on-time performance.",
+          desc: "Fleet location views, route planning workflows, estimated arrival information, and vehicle utilization insights for day-to-day operations.",
         },
         {
-          title: "Driver, Warehouse & Carrier Integrations",
-          desc: "Unified APIs connecting driver apps, warehouse management systems, and carrier partners into a single operational data layer.",
+          title: "Driver, Carrier & Warehouse Connectivity",
+          desc: "Connected driver applications, warehouse systems, carrier services, and dispatch tools that reduce fragmented operational data.",
         },
         {
-          title: "Dispatch Automation & Exception Management",
-          desc: "Intelligent load assignment, automated dispatch workflows, and proactive exception alerts that reduce manual coordination overhead.",
+          title: "Dispatch Automation & Exception Handling",
+          desc: "Load assignment, dispatch workflows, delay alerts, and escalation paths that help teams coordinate changing delivery conditions.",
         },
         {
-          title: "Proof of Delivery & Operational Analytics",
-          desc: "Digital POD capture, customer notification workflows, and operational dashboards with SLA adherence and driver performance metrics.",
+          title: "Proof of Delivery & Customer Communication",
+          desc: "Digital delivery confirmation, supporting photos or signatures where applicable, customer notifications, and issue reporting workflows.",
+        },
+        {
+          title: "Fleet Performance & Operational Analytics",
+          desc: "Delivery performance dashboards, route and utilization summaries, service-level reporting, and operational trends for informed decisions.",
         },
       ],
     },
@@ -721,63 +990,107 @@ export const industryData: Record<string, IndustryPageContent> = {
       kicker: "DISCIPLINES APPLIED",
       title: "How we engineer logistics solutions.",
       intro:
-        "Custom fleet management platforms, real-time tracking systems, and integration layers that connect every node in your supply chain.",
+        "Fleet applications, real-time operational visibility, and connected delivery workflows that help dispatchers, drivers, partners, and customers work from consistent information.",
       items: [
         {
-          kicker: "CUSTOM WEB & MOBILE APPS",
-          title: "Engineering",
+          kicker: "DISPATCH, DRIVER & CUSTOMER TOOLS",
+          title: "Product Engineering",
           intro:
-            "Dispatcher dashboards, driver mobile apps, and customer tracking portals with offline support and real-time location updates.",
+            "Dispatcher dashboards, driver mobile apps, and shipment tracking portals designed around on-road and back-office workflows.",
           features: [
-            "Product strategy and technical discovery",
-            "Custom web platforms and client portals",
-            "Native iOS and Android applications",
-            "Secure APIs, roles and workflows",
-            "Performance engineering and accessibility",
-            "Full source-code and IP handover",
+            "Fleet and dispatch management applications",
+            "Driver mobile workflows and task lists",
+            "Customer shipment tracking portals",
+            "Proof-of-delivery capture and exception reporting",
+            "Location-aware interfaces and accessibility",
+            "Source-code ownership and technical handover",
           ],
         },
         {
-          kicker: "PRACTICAL AI SYSTEMS",
+          kicker: "ROUTE & OPERATIONS INTELLIGENCE",
           title: "AI & Automation",
           intro:
-            "Route optimization algorithms, delivery ETAs powered by traffic data, and automated exception escalation for delayed shipments.",
+            "Decision-support capabilities for delivery planning, arrival estimates, exception prioritization, and repetitive logistics workflows.",
           features: [
-            "Private company knowledge search",
-            "Document extraction and OCR",
-            "AI assistants with approval steps",
-            "Customer support automation",
-            "Workflow and task orchestration",
-            "Evaluation, guardrails and audit trails",
+            "Route and delivery performance analysis",
+            "ETA estimation and delay indicators",
+            "Automated exception alerts and escalation",
+            "Document extraction for shipment records",
+            "Dispatch and task orchestration",
+            "Operational review and traceable decisions",
           ],
         },
         {
-          kicker: "INSTANT SYNC & CONNECTIONS",
+          kicker: "FLEET, CARRIER & WAREHOUSE SYSTEMS",
           title: "Integrations",
           intro:
-            "GPS tracker integrations, warehouse WMS connectors, carrier API integrations, and real-time event streaming across operations.",
+            "Connected GPS, carrier, warehouse, order, and messaging services that help coordinate logistics activity across organizations.",
           features: [
-            "Instant data sync between systems",
-            "Payment and WhatsApp integrations",
-            "Reliable queues and retries",
-            "API design and documentation",
-            "Event-driven workflows",
-            "Integration monitoring",
+            "GPS and telematics connectivity",
+            "Carrier and shipping API integrations",
+            "Warehouse and order management synchronization",
+            "Real-time status and location events",
+            "Customer notifications and messaging",
+            "Integration monitoring and failure recovery",
           ],
         },
         {
-          kicker: "CLOUD & 24/7 RELIABILITY",
+          kicker: "ALWAYS-VISIBLE OPERATIONS",
           title: "Cloud & DevOps",
           intro:
-            "Geo-distributed cloud infrastructure, real-time WebSocket updates for fleet positions, and high-availability backends for tracking.",
+            "Operational infrastructure designed for changing workloads, connected devices, and reliable access to shipment status and dispatch tools.",
           features: [
-            "Cloud architecture and migration",
-            "Automated scaling and recovery",
-            "Zero-downtime releases",
-            "Security and backup policies",
-            "Observability and incident response",
-            "Cloud cost reviews",
+            "Cloud architecture and migration planning",
+            "Real-time update and connection management",
+            "Automated testing and controlled releases",
+            "Monitoring, logging, and incident alerting",
+            "Backup and service recovery planning",
+            "Performance and cloud cost optimization",
           ],
+        },
+      ],
+    },
+    engineeringChallenges: {
+      kicker: "ENGINEERED FOR EVERY DELIVERY",
+      title: "Six challenges that disrupt logistics operations.",
+      intro:
+        "When shipment data, driver workflows, and carrier systems are disconnected, teams lose time reacting to exceptions. We build connected logistics platforms that improve visibility and coordination.",
+      items: [
+        {
+          title: "Limited Shipment Visibility",
+          desc: "Scattered updates from drivers, carriers, and warehouses make it hard to understand where a shipment is or when it may arrive.",
+          solution: "We create connected tracking experiences with clearer milestone updates so teams and customers can follow shipment progress.",
+          icon: "MapPin",
+        },
+        {
+          title: "Inefficient Routes & Uncertain ETAs",
+          desc: "Static route plans, changing road conditions, and incomplete delivery data can increase travel time and make arrival estimates unreliable.",
+          solution: "We build route planning and ETA-support workflows that help dispatch teams make better-informed delivery decisions.",
+          icon: "Route",
+        },
+        {
+          title: "Driver & Fleet Coordination Gaps",
+          desc: "Manual dispatch, disconnected driver tools, and unclear task ownership can cause duplicated effort and missed delivery steps.",
+          solution: "We connect dispatch and driver workflows with clearer assignments, status updates, and exception handling.",
+          icon: "Truck",
+        },
+        {
+          title: "Disconnected Carrier & Warehouse Data",
+          desc: "Different systems can show conflicting order statuses, incomplete handoff records, and delayed operational updates.",
+          solution: "We connect authorized logistics systems and introduce monitored data exchange to improve consistency across delivery stages.",
+          icon: "Network",
+        },
+        {
+          title: "Delivery Exceptions & Missing Proof",
+          desc: "Failed delivery attempts, incomplete proof-of-delivery records, and delayed escalation can slow resolution and customer communication.",
+          solution: "We build digital delivery confirmation and exception workflows that capture key details and route unresolved issues for follow-up.",
+          icon: "ClipboardCheck",
+        },
+        {
+          title: "Tracking Outages & Operational Blind Spots",
+          desc: "Connection failures, delayed events, and weak monitoring can leave dispatchers without timely information during busy periods.",
+          solution: "We strengthen monitoring, update handling, and recovery planning so critical shipment information is easier to access and troubleshoot.",
+          icon: "Activity",
         },
       ],
     },
@@ -787,33 +1100,33 @@ export const industryData: Record<string, IndustryPageContent> = {
     slug: "lawtech",
     operatingCapabilities: {
       kicker: "LAW CHAMBERS · LEGAL TECHNOLOGY",
-      title: "Technology that fits your operating reality.",
+      title: "Confidential legal work, clearly organized.",
       intro:
-        "Case management, legal document intelligence, and secure client collaboration engineered for law firms where confidentiality, precision, and timeline discipline are non-negotiable.",
+        "Matter management, legal document intelligence, and secure client collaboration engineered to help legal teams protect confidentiality and stay in control of deadlines and case information.",
       items: [
         {
           title: "Matter, Case & Client Management",
-          desc: "Structured matter intake, client relationship tracking, and case lifecycle management that keeps every legal engagement organized.",
+          desc: "Structured matter intake, client profiles, case milestones, communication histories, and organized workflows from engagement through closure.",
         },
         {
-          title: "Legal Document Management & Extraction",
-          desc: "Intelligent document indexing, OCR-powered text extraction, version control, and full-text search across thousands of legal documents.",
+          title: "Legal Document Intelligence & Search",
+          desc: "Document indexing, OCR, full-text search, version history, and clause or entity extraction across large collections of legal files.",
         },
         {
-          title: "Deadline, Hearing & Task Tracking",
-          desc: "Court date calendars, limitation period alerts, and task workflows with automated escalation to prevent missed deadlines.",
+          title: "Hearings, Deadlines & Task Control",
+          desc: "Court calendars, limitation-date reminders, assigned tasks, status tracking, and escalation workflows that help teams manage important dates.",
         },
         {
-          title: "Secure Client Portals & Document Sharing",
-          desc: "Encrypted client collaboration spaces, controlled document sharing, and granular access permissions that protect privileged information.",
+          title: "Secure Client Collaboration",
+          desc: "Client portals, controlled file sharing, matter-specific access, and organized communication channels for confidential engagement work.",
         },
         {
-          title: "Legal Research & Source-Grounded AI",
-          desc: "AI-assisted precedent search, statute lookup, and document summarization grounded in verified legal sources with citation tracking.",
+          title: "Source-Grounded Legal Research Support",
+          desc: "Search and summarization experiences that help legal professionals review source materials, discover relevant references, and trace supporting documents.",
         },
         {
-          title: "Role-Based Access & Confidentiality Controls",
-          desc: "Fine-grained permissions per matter, conflict-of-interest checks, immutable audit trails, and data retention policies aligned with bar council requirements.",
+          title: "Confidentiality, Audit & Practice Operations",
+          desc: "Matter-level permissions, activity records, conflict-check support, document retention workflows, and operational reporting for legal practices.",
         },
       ],
     },
@@ -821,63 +1134,107 @@ export const industryData: Record<string, IndustryPageContent> = {
       kicker: "DISCIPLINES APPLIED",
       title: "How we engineer lawtech solutions.",
       intro:
-        "Purpose-built legal platforms, document intelligence pipelines, and secure cloud infrastructure designed for law firm operations and confidentiality.",
+        "Purpose-built legal platforms, document workflows, and secure collaboration tools designed around law firm operations and the sensitive nature of legal information.",
       items: [
         {
-          kicker: "CUSTOM WEB & MOBILE APPS",
-          title: "Engineering",
+          kicker: "MATTER & CLIENT WORKFLOWS",
+          title: "Product Engineering",
           intro:
-            "Case management dashboards, client-facing portals, and secure mobile apps with role-based access and encrypted communications.",
+            "Case management dashboards, client portals, and legal operations tools that make matter information easier to organize and access appropriately.",
           features: [
-            "Product strategy and technical discovery",
-            "Custom web platforms and client portals",
-            "Native iOS and Android applications",
-            "Secure APIs, roles and workflows",
-            "Performance engineering and accessibility",
-            "Full source-code and IP handover",
+            "Matter, case, and client management systems",
+            "Deadline, hearing, and task calendars",
+            "Client portals and secure document sharing",
+            "Matter-specific permissions and workflows",
+            "Responsive interfaces and accessibility",
+            "Source-code ownership and technical handover",
           ],
         },
         {
-          kicker: "PRACTICAL AI SYSTEMS",
+          kicker: "LEGAL DOCUMENT INTELLIGENCE",
           title: "AI & Automation",
           intro:
-            "Legal document extraction, contract clause analysis, precedent search, and automated compliance checking powered by private AI models.",
+            "Document processing, internal knowledge search, and source-linked research support designed to assist legal professionals while preserving review and judgment.",
           features: [
-            "Private company knowledge search",
-            "Document extraction and OCR",
-            "AI assistants with approval steps",
-            "Customer support automation",
-            "Workflow and task orchestration",
-            "Evaluation, guardrails and audit trails",
+            "OCR and legal document extraction",
+            "Contract clause and document comparison support",
+            "Search across approved legal knowledge sources",
+            "Source-referenced summaries and retrieval",
+            "Intake, deadline, and task automation",
+            "Human review, audit trails, and AI safeguards",
           ],
         },
         {
-          kicker: "INSTANT SYNC & CONNECTIONS",
+          kicker: "COURT, DOCUMENT & OFFICE SYSTEMS",
           title: "Integrations",
           intro:
-            "Court e-filing connectors, calendar sync, DMS integrations, and secure client communication channels for seamless workflows.",
+            "Connected calendars, document repositories, client communication tools, and approved external systems that reduce duplicate data entry.",
           features: [
-            "Instant data sync between systems",
-            "Payment and WhatsApp integrations",
-            "Reliable queues and retries",
-            "API design and documentation",
-            "Event-driven workflows",
-            "Integration monitoring",
+            "Calendar and hearing-date synchronization",
+            "Document management system connectivity",
+            "Client communication and notification workflows",
+            "Billing and practice-management integrations",
+            "Secure APIs and controlled data exchange",
+            "Integration monitoring and error handling",
           ],
         },
         {
-          kicker: "CLOUD & 24/7 RELIABILITY",
+          kicker: "CONFIDENTIAL DIGITAL OPERATIONS",
           title: "Cloud & DevOps",
           intro:
-            "Encrypted cloud infrastructure, backup and disaster recovery, and access-controlled deployments for legal data confidentiality.",
+            "Security-conscious infrastructure, controlled releases, and recovery practices that help legal teams manage sensitive records and service continuity.",
           features: [
-            "Cloud architecture and migration",
-            "Automated scaling and recovery",
-            "Zero-downtime releases",
-            "Security and backup policies",
-            "Observability and incident response",
-            "Cloud cost reviews",
+            "Cloud architecture and migration planning",
+            "Encryption and secrets management",
+            "Role-aware access and environment controls",
+            "Monitoring, logging, and incident response",
+            "Backup, restore, and recovery planning",
+            "Security reviews and cost optimization",
           ],
+        },
+      ],
+    },
+    engineeringChallenges: {
+      kicker: "ENGINEERED FOR LEGAL PRECISION",
+      title: "Six challenges that put legal operations at risk.",
+      intro:
+        "Legal work depends on organized matter records, precise timelines, trusted source material, and strict confidentiality. We build systems that help legal teams reduce operational friction while preserving professional oversight.",
+      items: [
+        {
+          title: "Fragmented Matter & Client Records",
+          desc: "Case information scattered across emails, spreadsheets, shared drives, and individual files makes it difficult to find the current matter status.",
+          solution: "We create organized matter workspaces and searchable records that give authorized teams a clearer view of case information and activity.",
+          icon: "Folders",
+        },
+        {
+          title: "Document Overload & Slow Retrieval",
+          desc: "Large document sets, scanned files, inconsistent naming, and multiple versions make relevant clauses and evidence difficult to locate quickly.",
+          solution: "We build document organization and retrieval workflows that improve searchability, version visibility, and access to source materials.",
+          icon: "FileSearch",
+        },
+        {
+          title: "Missed Hearings, Deadlines & Follow-Ups",
+          desc: "Manual calendars and disconnected task lists can make important dates difficult to track across matters, teams, and clients.",
+          solution: "We implement connected deadline and task workflows with reminders, ownership, and escalation visibility for important legal milestones.",
+          icon: "CalendarClock",
+        },
+        {
+          title: "Confidentiality & Unauthorized Access Risks",
+          desc: "Broad sharing permissions, weak matter boundaries, and limited activity records can expose privileged information or complicate investigations.",
+          solution: "We design controlled collaboration and access workflows with traceable activity to support confidentiality and internal governance.",
+          icon: "ShieldCheck",
+        },
+        {
+          title: "Unverified Research & Unsupported AI Output",
+          desc: "Search summaries that lack source context or document references can be difficult to validate and may waste review time.",
+          solution: "We build source-grounded research support that links outputs to approved materials and keeps professional verification part of the workflow.",
+          icon: "BookOpenCheck",
+        },
+        {
+          title: "Manual Administration & Audit Preparation",
+          desc: "Repeated intake tasks, scattered activity records, and inconsistent document handling increase administrative overhead and slow audit preparation.",
+          solution: "We streamline appropriate administrative workflows and organize activity records so teams can retrieve the information needed for review.",
+          icon: "ClipboardList",
         },
       ],
     },

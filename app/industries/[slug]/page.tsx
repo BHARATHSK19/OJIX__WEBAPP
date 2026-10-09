@@ -1,32 +1,35 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
 import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUpRight,
-  CheckCircle,
-  ShieldCheck,
-  Cpu,
-  TrafficSignal,
-  ReceiptX,
-  Warehouse,
-  Database,
-  Binoculars,
-  WarningCircle,
-  Brain,
-  Scan,
-  Lightning,
-  ChartLineUp,
-  CloudCheck,
-} from "@phosphor-icons/react/dist/ssr";
+  ArrowLeftIcon as ArrowLeft,
+  ArrowRightIcon as ArrowRight,
+  ArrowUpRightIcon as ArrowUpRight,
+  CheckCircleIcon as CheckCircle,
+  ShieldCheckIcon as ShieldCheck,
+  TrafficSignalIcon as TrafficSignal,
+  ReceiptXIcon as ReceiptX,
+  WarehouseIcon as Warehouse,
+  DatabaseIcon as Database,
+  BinocularsIcon as Binoculars,
+  WarningCircleIcon as WarningCircle,
+  BrainIcon as Brain,
+  ScanIcon as Scan,
+  LightningIcon as Lightning,
+  ChartLineUpIcon as ChartLineUp,
+  CloudCheckIcon as CloudCheck,
+} from "@phosphor-icons/react/ssr";
+
 import { industries } from "@/lib/content";
 import { industryData } from "../industryData";
 
 export function generateStaticParams() {
-  return industries.map((x) => ({ slug: x.slug }));
+  return industries.map((industry) => ({
+    slug: industry.slug,
+  }));
 }
 
-const ICON_MAP: Record<string, React.FC<{ size: number } & React.SVGProps<SVGSVGElement>>> = {
+const ICON_MAP: Record<string, typeof ArrowLeft> = {
   TrafficSignal,
   ReceiptX,
   Warehouse,
@@ -40,7 +43,6 @@ const ICON_MAP: Record<string, React.FC<{ size: number } & React.SVGProps<SVGSVG
   ShieldCheck,
   CloudCheck,
 };
-
 export default async function IndustryPage({
   params,
 }: {
@@ -134,88 +136,116 @@ export default async function IndustryPage({
         </div>
       </section>
 
-      {/* Engineering Challenges Section (shown for industries with challenges) */}
-      {data.engineeringChallenges && (
-        <section className="py-24 md:py-32 px-6 bg-theme-bg theme-transition border-b border-theme-border">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-16 reveal">
-              <span className="font-mono text-xs font-semibold uppercase tracking-widest text-theme-accent mb-4 block">
-                {data.engineeringChallenges.kicker}
-              </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-theme-text theme-transition mb-4">
-                {data.engineeringChallenges.title}
-              </h2>
-              <p className="text-base sm:text-lg text-theme-muted max-w-2xl leading-relaxed">
-                {data.engineeringChallenges.intro}
-              </p>
-            </div>
+    
+{/* Engineering Challenges Section */}
+{data.engineeringChallenges && (
+  <section className="py-24 md:py-32 px-6 bg-theme-bg theme-transition border-b border-theme-border">
+    <div className="max-w-7xl mx-auto">
+      {/* Section Header */}
+      <div className="mb-16 reveal">
+        <span className="font-mono text-xs font-semibold uppercase tracking-widest text-theme-accent mb-4 block">
+          {data.engineeringChallenges.kicker}
+        </span>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {data.engineeringChallenges.items.map((challenge, i) => {
-                const IconComponent = ICON_MAP[challenge.icon];
-                return (
-                  <div
-                    key={challenge.title}
-                    className="challenge-flip-card"
-                  >
-                    <input
-                      type="checkbox"
-                      aria-label={"Show OJIX approach for " + challenge.title}
-                      className="challenge-flip-toggle"
-                      id={"challenge-flip-" + slug + "-" + i}
-                    />
-                    <div className="challenge-flip-inner">
-                      {/* Front face: title + desc + see solution button */}
-                      <div className="challenge-flip-face challenge-flip-front theme-transition">
-                        <div>
-                          <div className="flex items-center gap-3.5 mb-4">
-                            <div className="product-icon-wrap">
-                              {IconComponent && <IconComponent size={22} />}
-                            </div>
-                            <h3 className="product-title text-lg sm:text-xl">
-                              {challenge.title}
-                            </h3>
-                          </div>
-                          <p className="text-sm text-theme-muted leading-relaxed">
-                            {challenge.desc}
-                          </p>
-                        </div>
-                        <label
-                          htmlFor={"challenge-flip-" + slug + "-" + i}
-                          className="challenge-see-solution"
-                        >
-                          <span>See solution</span>
-                          <ArrowRight size={14} />
-                        </label>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-theme-text theme-transition mb-4">
+          {data.engineeringChallenges.title}
+        </h2>
+
+        <p className="text-base sm:text-lg text-theme-muted max-w-2xl leading-relaxed">
+          {data.engineeringChallenges.intro}
+        </p>
+      </div>
+
+      {/* Challenge Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {data.engineeringChallenges.items.map((challenge, i) => {
+          const IconComponent =
+            ICON_MAP[challenge.icon] ?? ShieldCheck;
+
+          const checkboxId = `challenge-flip-${slug}-${i}`;
+
+          return (
+            <div
+              key={challenge.title}
+              className="challenge-flip-card"
+            >
+              {/* Toggle for CSS-based flip animation */}
+              <input
+                type="checkbox"
+                id={checkboxId}
+                aria-label={`Show OJIX approach for ${challenge.title}`}
+                aria-controls={`${checkboxId}-content`}
+                className="challenge-flip-toggle"
+              />
+
+              <div
+                id={`${checkboxId}-content`}
+                className="challenge-flip-inner"
+              >
+                {/* Front Face: Problem */}
+                <div className="challenge-flip-face challenge-flip-front theme-transition">
+                  <div>
+                    <div className="flex items-center gap-3.5 mb-4">
+                      <div className="product-icon-wrap">
+                        <IconComponent
+                          size={22}
+                          aria-hidden="true"
+                        />
                       </div>
 
-                      {/* Back face: OJIX approach */}
-                      <div className="challenge-flip-face challenge-flip-back theme-transition">
-                        <div>
-                          <div className="challenge-solution-label mb-3">
-                            <span className="challenge-num">{String(i + 1).padStart(2, "0")}</span>
-                            <span className="font-semibold text-sm text-theme-accent">OJIX approach</span>
-                          </div>
-                          <p className="text-sm leading-relaxed text-theme-text theme-transition">
-                            {challenge.solution}
-                          </p>
-                        </div>
-                        <label
-                          htmlFor={"challenge-flip-" + slug + "-" + i}
-                          className="challenge-back-btn"
-                        >
-                          <span>Back to challenge</span>
-                          <ArrowLeft size={14} />
-                        </label>
-                      </div>
+                      <h3 className="product-title text-lg sm:text-xl">
+                        {challenge.title}
+                      </h3>
                     </div>
+
+                    <p className="text-sm text-theme-muted leading-relaxed">
+                      {challenge.desc}
+                    </p>
                   </div>
-                );
-              })}
+
+                  <label
+                    htmlFor={checkboxId}
+                    className="challenge-see-solution"
+                  >
+                    <span>See solution</span>
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </label>
+                </div>
+
+                {/* Back Face: OJIX Solution */}
+                <div className="challenge-flip-face challenge-flip-back theme-transition">
+                  <div>
+                    <div className="challenge-solution-label mb-3">
+                      <span className="challenge-num">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+
+                      <span className="font-semibold text-sm text-theme-accent">
+                        OJIX approach
+                      </span>
+                    </div>
+
+                    <p className="text-sm leading-relaxed text-theme-text theme-transition">
+                      {challenge.solution}
+                    </p>
+                  </div>
+
+                  <label
+                    htmlFor={checkboxId}
+                    className="challenge-back-btn"
+                  >
+                    <span>Back to challenge</span>
+                    <ArrowLeft size={14} aria-hidden="true" />
+                  </label>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
-      )}
+          );
+        })}
+      </div>
+    </div>
+  </section>
+)}
 
 
 
