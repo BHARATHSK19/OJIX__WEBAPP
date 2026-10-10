@@ -173,7 +173,6 @@ saas: {
     ],
   },
 
-
   engineeringChallenges: {
     kicker: "ENGINEERED FOR SAAS GROWTH",
     title:"Priority challenges that can slow a growing SaaS product.",
