@@ -176,7 +176,7 @@ saas: {
 
   engineeringChallenges: {
     kicker: "ENGINEERED FOR SAAS GROWTH",
-    title: "Six challenges that can slow a growing SaaS product.",
+    title:"Priority challenges that can slow a growing SaaS product.",
     intro:
       "As a SaaS product scales, reliability, tenant boundaries, billing accuracy, and smooth integrations become essential to customer trust. We build platforms designed to address these operational challenges as your business grows.",
     items: [
@@ -333,7 +333,7 @@ fintech: {
 
   engineeringChallenges: {
     kicker: "ENGINEERED FOR FINANCIAL TRUST",
-    title: "Six challenges that put financial platforms under pressure.",
+    title:"Priority challenges that put financial platforms under pressure.",
     intro:
       "Financial products depend on accurate records, secure access, dependable transaction flows, and traceable operations. We build fintech systems around these demands without making blanket claims about regulatory approval or guaranteed outcomes.",
     items: [
@@ -476,7 +476,7 @@ healthcare: {
     },
     engineeringChallenges: {
       kicker: "ENGINEERED FOR REAL-WORLD CARE",
-      title: "Six challenges that complicate healthcare delivery.",
+      title:"Priority challenges  complicate healthcare delivery.",
       intro:
         "Healthcare teams often work across busy schedules, sensitive records, and systems that were not designed to communicate. We build digital solutions that help make care operations more coordinated, secure, and visible.",
       items: [
@@ -620,7 +620,7 @@ healthcare: {
     },
     engineeringChallenges: {
       kicker: "ENGINEERED FOR REAL-WORLD COMMERCE",
-      title: "Six challenges that can make or break an online business.",
+      title:"Priority challenges can make or break an online business.",
       intro:
         "Behind a smooth shopping experience is a system that must handle traffic, protect transactions, maintain accurate stock, and recover when connected services fail. We engineer commerce platforms with these challenges in mind.",
       items: [
@@ -764,7 +764,7 @@ healthcare: {
     },
     engineeringChallenges: {
       kicker: "ENGINEERED FOR BETTER LEARNING",
-      title: "Six challenges that disrupt digital education.",
+      title:"Priority challenges disrupt digital education.",
       intro:
         "Education platforms must serve learners at scale, protect assessment integrity, and make progress visible to educators. We build digital learning systems that address common operational and experience gaps.",
       items: [
@@ -908,7 +908,7 @@ healthcare: {
     },
     engineeringChallenges: {
       kicker: "ENGINEERED FOR STOCK ACCURACY",
-      title: "Six challenges that create inventory blind spots.",
+      title:"Priority challenges which create inventory blind spots.",
       intro:
         "Inventory problems often begin with delayed updates, fragmented records, or manual processes that cannot keep pace with daily operations. We build connected systems that improve visibility and control.",
       items: [
@@ -1052,7 +1052,7 @@ healthcare: {
     },
     engineeringChallenges: {
       kicker: "ENGINEERED FOR EVERY DELIVERY",
-      title: "Six challenges that disrupt logistics operations.",
+      title:"Priority challenges disrupt logistics operations.",
       intro:
         "When shipment data, driver workflows, and carrier systems are disconnected, teams lose time reacting to exceptions. We build connected logistics platforms that improve visibility and coordination.",
       items: [
@@ -1196,7 +1196,7 @@ healthcare: {
     },
     engineeringChallenges: {
       kicker: "ENGINEERED FOR LEGAL PRECISION",
-      title: "Six challenges that put legal operations at risk.",
+      title: "Priority challenges that put legal operations at risk.",
       intro:
         "Legal work depends on organized matter records, precise timelines, trusted source material, and strict confidentiality. We build systems that help legal teams reduce operational friction while preserving professional oversight.",
       items: [

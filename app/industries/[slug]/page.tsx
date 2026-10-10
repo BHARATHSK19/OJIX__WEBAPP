@@ -207,7 +207,7 @@ export default async function IndustryPage({
                     htmlFor={checkboxId}
                     className="challenge-see-solution"
                   >
-                    <span>See solution</span>
+                    <span>Ojix approach</span>
                     <ArrowRight size={14} aria-hidden="true" />
                   </label>
                 </div>
