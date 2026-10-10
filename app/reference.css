@@ -1103,6 +1103,90 @@
             position: relative;
             cursor: pointer;
             text-decoration: none;
+            overflow: hidden;
+        }
+
+        .product-card.product-card-expand {
+            overflow: hidden;
+            min-height: 520px;
+        }
+
+        .product-card-inner {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            flex-grow: 1;
+        }
+
+        .product-thumbnail-spacer {
+            height: 125px;
+            width: 100%;
+            margin-top: auto;
+            margin-bottom: 16px;
+            pointer-events: none;
+        }
+
+        /* The Expanding Background Image Stage */
+        .product-expand-bg {
+            position: absolute;
+            left: 26px;
+            right: 26px;
+            bottom: 90px;
+            top: calc(100% - 215px);
+            border-radius: 14px;
+            overflow: hidden;
+            z-index: 2;
+            transition: top 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                        bottom 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                        left 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                        right 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-radius 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        html[data-theme="dark"] .product-expand-bg {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+        }
+
+        .product-expand-img {
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Subtle resting scrim */
+        .product-expand-scrim {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(7, 11, 18, 0) 0%, rgba(7, 11, 18, 0.25) 100%);
+            transition: background 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        /* HOVER: Slowly enlarge and expand to show full image covering the card */
+        .product-card.product-card-expand:hover .product-expand-bg {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 22px;
+            box-shadow: none;
+        }
+
+        .product-card.product-card-expand:hover .product-expand-img {
+            transform: scale(1.06);
+        }
+
+        .product-card.product-card-expand:hover .product-expand-scrim {
+            background: linear-gradient(
+                180deg,
+                rgba(7, 11, 18, 0.90) 0%,
+                rgba(7, 11, 18, 0.74) 40%,
+                rgba(7, 11, 18, 0.94) 100%
+            );
         }
 
         .product-card:hover {

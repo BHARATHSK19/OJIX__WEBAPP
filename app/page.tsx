@@ -2,8 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, ChartLineUp, CheckCircle, Cloud, Code, Compass, Cpu, FileText, HardDrives, ShieldCheck } from "@phosphor-icons/react/dist/ssr";
 import { clientLogos, industries, methodology, products, services } from "@/lib/content";
+import { WhyUsSection } from "@/components/why-us";
+import { DeliveryMethodology } from "@/components/delivery-methodology";
 
 const serviceImages = ["photo-1522071820081-009f0129c71c", "photo-1618005182384-a83a8bd57fbe", "photo-1558494949-ef010cbdcc31", "photo-1551288049-bebda4e38f71", "photo-1460925895917-afdab827c52f", "photo-1531403009284-440f080d1e12"];
+const productImages = ["photo-1450101499163-c8848c66ca85", "photo-1516321318423-f06f85e504b3", "photo-1551288049-bebda4e38f71", "photo-1558494949-ef010cbdcc31"];
 const productVisuals = [ShieldCheck, ShieldCheck, FileText, HardDrives];
 const sectorVisuals = [Cloud, ChartLineUp, ShieldCheck, ArrowRight, Code, HardDrives, ArrowRight, FileText];
 const sectorPills = [["Platforms", "Multi-Tenant"], ["Payment Rails", "Security"], ["Workflows", "Health Data"], ["Commerce", "Automation"], ["Assessment", "Learning Portals"], ["Operations", "Automation"], ["Fleet Tracking", "Supply Chain"], ["Case Flow", "Legal Automation"]];
@@ -71,12 +74,74 @@ export default function Home() {
 
         <section id="what-we-build" className="py-24 md:py-32 px-6 bg-theme-bg relative overflow-hidden theme-transition border-b border-theme-border"><div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-orange-500/5 via-transparent to-transparent pointer-events-none rounded-full blur-3xl -z-10" /><div className="max-w-7xl mx-auto"><div className="mb-16 md:mb-20 reveal"><span className="font-mono text-xs font-semibold uppercase tracking-widest text-theme-accent mb-4 block">WHAT WE BUILD</span><h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight theme-transition leading-[1.15] mb-6">Six disciplines. Everything custom for your business.</h2><p className="text-base md:text-lg text-theme-muted max-w-3xl leading-relaxed theme-transition">The dedicated engineers who design and architect your software write the code and run the servers — zero outsourced handoffs, zero middlemen, zero finger-pointing.</p></div><div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">{services.map((service, i) => <Link href={`/services/${service.slug}`} key={service.slug} className={`discipline-card group reveal delay-${i % 3 === 0 ? "100" : i % 3 === 1 ? "200" : "300"}`}><div className="discipline-tag"><span className="discipline-tag-circle" /><span>{service.name}</span></div><div className="discipline-content"><h3 className="discipline-title">{["Custom Web & Mobile Apps", "Practical AI & Automation", "Bulletproof Cloud Hosting", "Live Sync & Connectors", "Clean Data & Live Dashboards", "Technical Advisory"][i]}</h3><p className="discipline-desc">{service.intro}</p></div><div className="discipline-capsule"><Image src={`https://images.unsplash.com/${serviceImages[i]}?auto=format&fit=crop&w=600&q=80`} alt={service.name} fill unoptimized sizes="(max-width: 768px) 90vw, 32vw" className="capsule-photo" /><div className="capsule-scrim" /><div className="capsule-track-line" /><span className="capsule-text">View service</span><div className="capsule-arrow-circle"><ArrowRight size={16} /></div></div></Link>)}</div></div></section>
 
-        <section id="how-we-work" className="py-24 md:py-32 px-6"><div className="max-w-7xl mx-auto"><div className="mb-16 reveal"><span className="font-mono text-xs font-semibold uppercase tracking-widest text-theme-accent mb-4 block">The Method</span><h2 className="text-4xl md:text-5xl font-extrabold tracking-tight theme-transition">Why choose OJIX</h2></div><div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">{[{ label: "Engineering Reality", image: "photo-1627398242454-45a1465c2479", tag: "ARCHITECTURE", title: "Engineered for Reality", desc: "We prioritize robust architecture, secure data flows, and clean code over shortcuts. The product must work in production, not just staging.", pills: ["Robust Architecture", "Data Security", "Clean Code"], quote: "Built with intent. Never assembled from cheap templates." }, { label: "Direct Dialogue", image: "photo-1768839720467-90cc32edeb26", tag: "DIRECT ACCESS", title: "Direct Engineering Access", desc: "Zero sales fluff. You talk directly to the engineers building your systems, who give honest technical perspectives on your architecture and bottlenecks.", pills: ["In-House Team", "Honest Insights", "No Fluff"], quote: "Direct engineering access. Never filtered through sales fluff." }, { label: "Continuous Delivery", image: "photo-1551288049-bebda4e38f71", tag: "VELOCITY", title: "Measurable Momentum", desc: "Weekly ship cadences, clear milestones, and demonstrable software. We judge our progress by the value deployed to users.", pills: ["Weekly Ships", "Clear Milestones", "Demonstrable ROI"], quote: "Shipped weekly to production. Never measured in vanity metrics." }].map((card, i) => <article key={card.title} className={`method-card group reveal delay-${i === 0 ? "100" : i === 1 ? "200" : "300"}`}><div className="method-drop-curtain" /><div className="method-card-content"><div className="discipline-tag mb-4"><span className="discipline-tag-circle" /><span>{card.label}</span></div><div className="method-visual"><Image src={`https://images.unsplash.com/${card.image}?auto=format&fit=crop&w=800&q=80`} alt={card.title} fill unoptimized sizes="(max-width:768px) 90vw, 30vw" className="method-visual-img" /><div className="method-visual-overlay" /><div className="method-visual-tags"><span className="method-tag-pill font-mono">{card.tag}</span></div></div><div className="method-body"><h3 className="method-title">{card.title}</h3><p className="method-desc">{card.desc}</p><div className="method-pills">{card.pills.map(p => <span key={p} className="method-pill">{p}</span>)}</div></div><div className="method-footer"><div className="method-tagline-wrap"><span className="method-tagline-quote">“</span><p className="method-tagline-text">{card.quote}</p></div><div className="method-action-row"><Link href="/about" className="method-action"><span>Explore method</span><ArrowUpRight size={15} className="method-arrow" /></Link><Link href="/about" className="method-action-btn" aria-label="Explore how we work"><ArrowUpRight size={14} /></Link></div></div></div></article>)}</div></div></section>
+        <WhyUsSection />
 
-        <section id="products" className="py-24 md:py-32 px-6 bg-theme-bg border-y border-theme-border theme-transition"><div className="max-w-7xl mx-auto"><div className="mb-16 reveal"><span className="font-mono text-xs font-semibold uppercase tracking-widest text-theme-accent mb-4 block">02 / Ecosystem</span><h2 className="text-4xl md:text-5xl font-extrabold tracking-tight theme-transition">Products</h2><p className="mt-4 text-theme-muted max-w-xl">Operationally complex software supported by custom engineering where out-of-the-box tools fall short.</p></div><div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">{products.map((product, i) => { const Icon = productVisuals[i]; return <Link href={`/products/${product.slug}`} key={product.slug} className={`product-card group reveal delay-${i % 4 === 0 ? "100" : i % 4 === 1 ? "200" : i % 4 === 2 ? "300" : "400"}`}><div className="discipline-tag mb-5"><span className="discipline-tag-circle" /><span>{product.category}</span></div><div className="flex items-center gap-3.5 mb-3"><div className="product-icon-wrap"><Icon size={22} /></div><h3 className="product-title">{product.name}</h3></div><p className="product-desc">{product.description}</p><div className="product-pills">{product.benefits.slice(0, 2).map(p => <span key={p} className="product-pill">{p}</span>)}</div><div className="product-footer"><span>Explore product</span><div className="product-btn"><ArrowRight size={15} /></div></div></Link> })}</div><div className="mt-10 text-center reveal"><Link href="/contact" className="inline-flex items-center gap-2 font-bold text-sm text-theme-muted hover:text-theme-accent transition-colors">Enquire about the OJIX product suite <ArrowRight size={15} /></Link></div></div></section>
+        <section id="products" className="py-24 md:py-32 px-6 bg-theme-bg border-y border-theme-border theme-transition">
+            <div className="max-w-7xl mx-auto">
+                <div className="mb-16 reveal">
+                    <span className="font-mono text-xs font-semibold uppercase tracking-widest text-theme-accent mb-4 block">02 / Ecosystem</span>
+                    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight theme-transition">Products</h2>
+                    <p className="mt-4 text-theme-muted max-w-xl">Operationally complex software supported by custom engineering where out-of-the-box tools fall short.</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {products.map((product, i) => {
+                        const Icon = productVisuals[i];
+                        return (
+                            <Link
+                                href={`/products/${product.slug}`}
+                                key={product.slug}
+                                className={`product-card product-card-expand group reveal delay-${i % 4 === 0 ? "100" : i % 4 === 1 ? "200" : i % 4 === 2 ? "300" : "400"}`}
+                            >
+                                <div className="product-expand-bg" aria-hidden="true">
+                                    <Image
+                                        src={`https://images.unsplash.com/${productImages[i]}?auto=format&fit=crop&w=800&q=80`}
+                                        alt={product.name}
+                                        fill
+                                        unoptimized
+                                        sizes="(max-width: 768px) 100vw, 25vw"
+                                        className="product-expand-img"
+                                    />
+                                    <div className="product-expand-scrim" />
+                                </div>
+                                <div className="product-card-inner">
+                                    <div className="discipline-tag mb-5">
+                                        <span className="discipline-tag-circle" />
+                                        <span>{product.category}</span>
+                                    </div>
+                                    <div className="flex items-center gap-3.5 mb-3">
+                                        <div className="product-icon-wrap">
+                                            <Icon size={22} />
+                                        </div>
+                                        <h3 className="product-title">{product.name}</h3>
+                                    </div>
+                                    <p className="product-desc">{product.description}</p>
+                                    <div className="product-pills">
+                                        {product.benefits.slice(0, 2).map((p) => (
+                                            <span key={p} className="product-pill">{p}</span>
+                                        ))}
+                                    </div>
+                                    <div className="product-thumbnail-spacer" />
+                                    <div className="product-footer">
+                                        <span>Explore product</span>
+                                        <div className="product-btn">
+                                            <ArrowRight size={15} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                        );
+                    })}
+                </div>
+                <div className="mt-10 text-center reveal">
+                    <Link href="/contact" className="inline-flex items-center gap-2 font-bold text-sm text-theme-muted hover:text-theme-accent transition-colors">
+                        Enquire about the OJIX product suite <ArrowRight size={15} />
+                    </Link>
+                </div>
+            </div>
+        </section>
 
         <section id="work" className="py-24 md:py-32 px-6 bg-theme-bg theme-transition"><div className="max-w-7xl mx-auto"><div className="mb-14 reveal"><span className="font-mono text-xs font-semibold uppercase tracking-widest text-theme-accent mb-4 block">03 / Focus Areas</span><h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight theme-transition">Eight Mission-Critical Sectors</h2><p className="mt-4 text-theme-muted max-w-2xl text-base sm:text-lg">Specialized domain engineering where reliability, security, and precision can never be compromised.</p></div><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">{industries.map((sector, i) => { const Icon = sectorVisuals[i]; return <Link href={`/industries/${sector.slug}`} key={sector.slug} className={`sector-card group reveal delay-${i % 4 === 0 ? "100" : i % 4 === 1 ? "200" : i % 4 === 2 ? "300" : "400"}`}><div><div className="flex items-center gap-3.5 mb-3.5"><div className="sector-icon-wrap"><Icon size={21} /></div><h3 className="sector-title">{sector.name}</h3></div><p className="sector-desc">{sector.brief}</p></div><div><div className="sector-pills">{sectorPills[i].map(p => <span key={p} className="sector-pill">{p}</span>)}</div><div className="sector-footer"><span>Explore sector</span><div className="sector-btn"><ArrowRight size={13} /></div></div></div></Link> })}</div></div></section>
 
-        <section id="capabilities" className="py-24 md:py-32 px-6 bg-theme-surface/30 border-t border-theme-border theme-transition"><div className="max-w-7xl mx-auto"><div className="mb-14 reveal"><span className="font-mono text-xs font-semibold uppercase tracking-widest text-theme-accent mb-4 block">04 / Delivery Methodology</span><h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight theme-transition">Transparent, milestone-based execution.</h2><p className="mt-4 text-theme-muted max-w-2xl text-base sm:text-lg">We operate with full technical transparency — delivering working code to live staging environments at every sprint checkpoint.</p></div><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">{methodology.map((step, i) => { const Icon = [Compass, Cpu, ChartLineUp, CheckCircle][i]; return <article key={step} className={`capability-card group reveal delay-${i % 4 === 0 ? "100" : i % 4 === 1 ? "200" : i % 4 === 2 ? "300" : "400"}`}><div><div className="discipline-tag mb-5"><span className="discipline-tag-circle" /><span>STEP 0{i + 1}</span></div><div className="flex items-center gap-3.5 mb-3"><div className="capability-icon-wrap"><Icon size={21} /></div><h3 className="capability-title">{step}</h3></div><p className="capability-desc">{methodologyDescriptions[i]}</p></div><div><div className="capability-pills"><span className="capability-pill">{["Discovery", "Architecture", "Feedback", "Ownership"][i]}</span><span className="capability-pill">{["Blueprint", "Plan", "Staging", "Launch"][i]}</span></div><div className="capability-footer"><span>{i === 3 ? "Ready for production" : "Next: Step 0" + (i + 2)}</span><div className="capability-btn"><ArrowRight size={13} /></div></div></div></article> })}</div></div></section>
+        <DeliveryMethodology />
     </>
 }
