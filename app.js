@@ -1284,3 +1284,66 @@ if (heroCards.length > 0) {
     new IntersectionObserver((en) => en.forEach((x) => (x.isIntersecting ? (draw(), start()) : stop())), { threshold: 0.25 }).observe(wave);
   } else start();
 })();
+
+// ============================================================
+// OJIX DEVICE SHOWCASE CAROUSEL — Product Pages
+// ============================================================
+(function initDeviceShowcaseCarousels() {
+  document.querySelectorAll('.ojix-device-showcase').forEach(showcase => {
+    const slides      = showcase.querySelectorAll('.carousel-slide');
+    const phoneSlides = showcase.querySelectorAll('.ojix-phone-slide');
+    const badges      = showcase.querySelectorAll('.ds-floating-badge');
+    const dots        = showcase.querySelectorAll('.ds-dots .dot');
+    if (slides.length < 2) return;
+
+    let index = 0;
+    let timer = null;
+
+    function goTo(i) {
+      slides[index].classList.remove('active');
+      if (phoneSlides[index]) phoneSlides[index].classList.remove('active');
+      if (badges[index]) badges[index].classList.remove('active');
+      if (dots[index]) dots[index].classList.remove('active');
+
+      index = (i + slides.length) % slides.length;
+
+      slides[index].classList.add('active');
+      if (phoneSlides[index]) phoneSlides[index].classList.add('active');
+      if (badges[index]) badges[index].classList.add('active');
+      if (dots[index]) dots[index].classList.add('active');
+    }
+
+    function start() {
+      if (prefersReducedMotion) return;
+      stop();
+      timer = setInterval(() => goTo(index + 1), 4000);
+    }
+
+    function stop() {
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+
+    // Dot click navigation
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => { stop(); goTo(i); start(); });
+    });
+
+    // Pause on hover
+    showcase.addEventListener('mouseenter', stop);
+    showcase.addEventListener('mouseleave', start);
+
+    // Init first slide
+    goTo(0);
+
+    // Start autoplay when hero enters viewport
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => e.isIntersecting ? start() : stop());
+      }, { threshold: 0.25 });
+      io.observe(showcase);
+    } else {
+      start();
+    }
+  });
+})();

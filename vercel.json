@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/company-management", "destination": "/companyos.html" },
+    { "source": "/legal-practice-system", "destination": "/legalos.html" },
+    { "source": "/purchase-inventory", "destination": "/procureos.html" },
+    { "source": "/school-college-system", "destination": "/campusos.html" },
+    { "source": "/construction-system", "destination": "/buildos.html" },
+    { "source": "/travel-booking", "destination": "/travelos.html" },
+    { "source": "/gym-fitness-system", "destination": "/fitos.html" },
+    { "source": "/data-privacy-vault", "destination": "/dpdp-compliance.html" }
+  ]
+}

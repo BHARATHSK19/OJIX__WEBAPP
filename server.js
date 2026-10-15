@@ -337,11 +337,25 @@ const staticOptions = {
 
 app.use(express.static(path.join(__dirname), staticOptions));
 
-// Clean URL rewrites (e.g. /legalos -> /legalos.html)
+// Clean URL rewrites (Clean professional slugs + direct legacy compatibility)
 const pageRoutes = [
+  // Primary clean slugs
+  { path: '/company-management', file: 'companyos.html' },
+  { path: '/legal-practice-system', file: 'legalos.html' },
+  { path: '/purchase-inventory', file: 'procureos.html' },
+  { path: '/school-college-system', file: 'campusos.html' },
+  { path: '/construction-system', file: 'buildos.html' },
+  { path: '/travel-booking', file: 'travelos.html' },
+  { path: '/gym-fitness-system', file: 'fitos.html' },
+  { path: '/data-privacy-vault', file: 'dpdp-compliance.html' },
+  // Backwards compatibility routes
+  { path: '/companyos', file: 'companyos.html' },
   { path: '/legalos', file: 'legalos.html' },
-  { path: '/campusos', file: 'campusos.html' },
   { path: '/procureos', file: 'procureos.html' },
+  { path: '/campusos', file: 'campusos.html' },
+  { path: '/buildos', file: 'buildos.html' },
+  { path: '/travelos', file: 'travelos.html' },
+  { path: '/fitos', file: 'fitos.html' },
   { path: '/dpdp-compliance', file: 'dpdp-compliance.html' },
   { path: '/dpdp', file: 'dpdp-compliance.html' }
 ];

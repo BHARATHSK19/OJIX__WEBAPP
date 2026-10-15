@@ -1210,7 +1210,7 @@ h1 em, h2 em {
 .pillar-hero-21 .hero-21-title,
 .hero.pillar-hero-21 h1.hero-21-title {
   font-family: var(--font-heading) !important;
-  font-size: clamp(38px, 5.2vw, 64px) !important;
+  font-size: clamp(2.25rem, 3.6vw, 3.25rem) !important;
   font-weight: 850 !important;
   line-height: 1.08 !important;
   letter-spacing: -0.035em !important;
@@ -1219,8 +1219,8 @@ h1 em, h2 em {
   margin-left: 0 !important;
   margin-right: auto !important;
   margin-top: 0 !important;
-  margin-bottom: 20px !important;
-  max-width: 18ch !important;
+  margin-bottom: 16px !important;
+  max-width: 20ch !important;
   width: 100% !important;
 }
 
@@ -1294,13 +1294,11 @@ h1 em, h2 em {
   width: auto !important;
 }
 
-/* 4 Feature Highlight Pills */
+/* 4 Feature Highlight Pills - 2x2 Grid */
 .pillar-hero-21 .hero-21-platform-strip {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 10px;
-  flex-wrap: wrap !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, max-content) !important;
+  gap: 0.75rem !important;
   width: 100% !important;
   max-width: 100% !important;
   margin-left: 0 !important;
@@ -1311,6 +1309,13 @@ h1 em, h2 em {
 
 .pillar-hero-21 .hero-suite-pill {
   margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 640px) {
+  .pillar-hero-21 .hero-21-platform-strip {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* Live Cockpit Card */
@@ -10806,8 +10811,10 @@ body .hero.pillar-hero-21 h1.hero-21-title {
   margin-left: 0 !important;
   margin-right: auto !important;
   margin-top: 0 !important;
-  margin-bottom: 20px !important;
-  max-width: 18ch !important;
+  margin-bottom: 16px !important;
+  font-size: clamp(2.25rem, 3.6vw, 3.25rem) !important;
+  line-height: 1.08 !important;
+  max-width: 20ch !important;
   width: 100% !important;
 }
 
@@ -10817,7 +10824,7 @@ body .hero.pillar-hero-21 p.hero-21-lede {
   margin-left: 0 !important;
   margin-right: auto !important;
   margin-top: 0 !important;
-  margin-bottom: 32px !important;
+  margin-bottom: 22px !important;
   max-width: 64ch !important;
   width: 100% !important;
 }
@@ -10829,7 +10836,7 @@ body .pillar-hero-21 .hero-21-actions {
   margin-left: 0 !important;
   margin-right: auto !important;
   margin-top: 0 !important;
-  margin-bottom: 28px !important;
+  margin-bottom: 20px !important;
   width: 100% !important;
 }
 
@@ -10840,6 +10847,7 @@ body .pillar-hero-21 .hero-21-proof {
   text-align: left !important;
   margin-left: 0 !important;
   margin-right: auto !important;
+  margin-bottom: 20px !important;
   max-width: 64ch !important;
 }
 
@@ -10860,4 +10868,314 @@ body .hero.pillar-hero-21 #cockpit {
   width: 100% !important;
   max-width: 100% !important;
   text-align: left !important;
+}
+
+/* ============================================================
+   OJIX DEVICE SHOWCASE CAROUSEL — Product Hero Grid
+   ============================================================ */
+
+/* Two-column hero split — align to start for single-screen above-the-fold fit */
+.pillar-hero-21 .hero-21-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  align-items: start;
+  width: 100%;
+}
+
+.pillar-hero-21 .hero-21-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* Device Showcase container: visible overflow for unclipped mobile phone overlay & badge */
+.ojix-device-showcase {
+  position: relative;
+  overflow: visible;
+  padding-right: 24px;
+  padding-bottom: 28px;
+  width: 100%;
+  max-width: 530px;
+  margin-left: auto;
+}
+
+/* macOS-style browser frame */
+.ds-browser-frame {
+  background: #1A2535;
+  border-radius: 12px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 32px 80px rgba(0,0,0,0.45),
+    0 8px 24px rgba(0,0,0,0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Title bar */
+.ds-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #111B2B;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-shrink: 0;
+}
+
+.ds-traffic-lights {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ds-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.ds-dot.ds-red   { background: #FF5F57; }
+.ds-dot.ds-yellow{ background: #FFBD2E; }
+.ds-dot.ds-green { background: #28C840; }
+
+.ds-urlbar {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Carousel area */
+.ds-carousel-track {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+/* Each slide */
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Desktop mockup SVG inside slide */
+.carousel-slide svg.ds-desktop-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Separate HTML Mobile Phone Frame positioned outside/overlapping the bottom-right corner */
+.ojix-phone-frame {
+  position: absolute;
+  right: -20px;
+  bottom: -24px;
+  width: 185px;
+  height: 330px;
+  z-index: 10;
+  border-radius: 24px;
+  border: 4px solid #0F1C2E;
+  box-shadow: 0 20px 45px rgba(15, 28, 46, 0.28);
+  overflow: hidden;
+  background: #0F1C2E;
+}
+
+.ds-mobile-notch {
+  height: 18px;
+  background: #0F1C2E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ds-mobile-notch::before {
+  content: '';
+  width: 44px;
+  height: 4px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 2px;
+}
+
+.ojix-phone-track {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 18px);
+  overflow: hidden;
+  background: #0F1C2E;
+}
+
+.ojix-phone-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.ojix-phone-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ojix-phone-slide svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Floating badge rendered at bottom-left of .ojix-device-showcase with zero clipping */
+.ds-badge-container {
+  position: absolute;
+  bottom: 8px;
+  left: -12px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.ds-floating-badge {
+  display: none;
+  background: linear-gradient(135deg, #C9662F 0%, #E07840 100%);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(201, 102, 47, 0.35), 0 2px 6px rgba(15, 28, 46, 0.2);
+  white-space: nowrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.ds-floating-badge.active {
+  display: inline-flex;
+}
+
+.ds-floating-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* Pagination dots */
+.ds-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0 6px;
+  background: #111B2B;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.ds-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ds-dots .dot.active {
+  background: #C9662F;
+  width: 18px;
+  border-radius: 3px;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 1024px) {
+  .pillar-hero-21 .hero-21-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .ojix-device-showcase {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-right: 16px;
+    padding-bottom: 20px;
+  }
+  .ojix-phone-frame {
+    width: 155px;
+    height: 280px;
+    right: -10px;
+    bottom: -16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ojix-phone-frame {
+    display: none;
+  }
+  .ojix-device-showcase {
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* === FORCE 2x2 PILL GRID & HERO ALIGNMENT ACROSS ALL 8 PRODUCT PAGES === */
+.hero-21-split {
+  align-items: center !important;
+}
+
+.hero-21-platform-strip {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, max-content)) !important;
+  gap: 0.65rem 0.75rem !important;
+  width: 100% !important;
+  max-width: 620px !important;
+  justify-content: start !important;
+}
+
+.hero-21-platform-strip .hero-suite-pill {
+  width: 100% !important;
+  white-space: nowrap !important;
+  justify-content: flex-start !important;
+  padding: 0.45rem 0.75rem !important;
+  font-size: 0.8rem !important;
+}
+
+@media (max-width: 640px) {
+  .hero-21-platform-strip {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* === PERMANENT HERO ALIGNMENT FIX === */
+.hero-21-split {
+  align-items: flex-start !important;
+}
+.ojix-device-showcase {
+  align-self: flex-start !important;
+  margin-top: 0 !important;
 }

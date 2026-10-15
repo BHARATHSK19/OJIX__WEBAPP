@@ -113,8 +113,9 @@
       max-width: 64ch !important;
     }
     .pillar-hero-21 .hero-21-platform-strip {
-      justify-content: flex-start !important;
-      align-items: center !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, max-content) !important;
+      gap: 0.75rem !important;
       margin-left: 0 !important;
       margin-right: auto !important;
       width: 100% !important;
@@ -238,7 +239,7 @@
           <div class="eleks-mega-dropdown" role="region" aria-label="Products subtabs">
             <div class="eleks-mega-inner">
               <div class="eleks-mega-left" role="tablist" aria-label="Select product">
-                <a href="companyos.html" class="eleks-subtab" role="tab" aria-selected="false"
+                <a href="/company-management" class="eleks-subtab" role="tab" aria-selected="false"
                    data-preview-title="Company Management System"
                    data-preview-desc="Run your daily office work in one place—staff attendance, monthly salaries, accounting, GST billing, and team approvals."
                    data-preview-badge="ALL-IN-ONE OFFICE &amp; ERP"
@@ -248,7 +249,7 @@
                   </span>
                   <span class="eleks-subtab-label">Company Management</span>
                 </a>
-                <a href="legalos.html" class="eleks-subtab" role="tab" aria-selected="false"
+                <a href="/legal-practice-system" class="eleks-subtab" role="tab" aria-selected="false"
                    data-preview-title="Legal Practice System"
                    data-preview-desc="Help your law firm track court hearing dates, case files, client updates, and legal billing without missing a single deadline."
                    data-preview-badge="LAW FIRMS &amp; ADVOCATES"
@@ -258,7 +259,7 @@
                   </span>
                   <span class="eleks-subtab-label">Legal Practice System</span>
                 </a>
-                <a href="procureos.html" class="eleks-subtab" role="tab" aria-selected="false"
+                <a href="/purchase-inventory" class="eleks-subtab" role="tab" aria-selected="false"
                    data-preview-title="Purchase &amp; Inventory System"
                    data-preview-desc="Manage supplier quotes, purchase orders, warehouse stock, and incoming GST bills so you only pay for what was actually delivered."
                    data-preview-badge="PURCHASING &amp; WAREHOUSE"
@@ -268,7 +269,7 @@
                   </span>
                   <span class="eleks-subtab-label">Purchase &amp; Inventory</span>
                 </a>
-                <a href="campusos.html" class="eleks-subtab" role="tab" aria-selected="false"
+                <a href="/school-college-system" class="eleks-subtab" role="tab" aria-selected="false"
                    data-preview-title="School &amp; College System"
                    data-preview-desc="Manage student admissions, daily attendance, fee payments, timetables, and exam report cards in one easy dashboard."
                    data-preview-badge="SCHOOLS &amp; COLLEGES"
@@ -278,7 +279,7 @@
                   </span>
                   <span class="eleks-subtab-label">School &amp; College System</span>
                 </a>
-                <a href="buildos.html" class="eleks-subtab is-active" role="tab" aria-selected="true"
+                <a href="/construction-system" class="eleks-subtab is-active" role="tab" aria-selected="true"
                    data-preview-title="Construction Management System"
                    data-preview-desc="Track daily work at construction sites, monitor cement and steel usage, verify contractor bills, and keep project budgets on track."
                    data-preview-badge="BUILDERS &amp; CONTRACTORS"
@@ -288,7 +289,7 @@
                   </span>
                   <span class="eleks-subtab-label">Construction System</span>
                 </a>
-                <a href="travelos.html" class="eleks-subtab" role="tab" aria-selected="false"
+                <a href="/travel-booking" class="eleks-subtab" role="tab" aria-selected="false"
                    data-preview-title="Travel &amp; Booking System"
                    data-preview-desc="Handle customer trip enquiries, tour packages, hotel and flight bookings, and driver schedules from one clean screen."
                    data-preview-badge="TRAVEL AGENCIES &amp; TOURS"
@@ -298,7 +299,7 @@
                   </span>
                   <span class="eleks-subtab-label">Travel &amp; Booking</span>
                 </a>
-                <a href="fitos.html" class="eleks-subtab" role="tab" aria-selected="false"
+                <a href="/gym-fitness-system" class="eleks-subtab" role="tab" aria-selected="false"
                    data-preview-title="Gym &amp; Fitness System"
                    data-preview-desc="Manage member check-ins, biometric entry gates, trainer schedules, and automatic membership renewal reminders effortlessly."
                    data-preview-badge="GYMS &amp; FITNESS STUDIOS"
@@ -308,7 +309,7 @@
                   </span>
                   <span class="eleks-subtab-label">Gym &amp; Fitness System</span>
                 </a>
-                <a href="dpdp-compliance.html" class="eleks-subtab" role="tab" aria-selected="false"
+                <a href="/data-privacy-vault" class="eleks-subtab" role="tab" aria-selected="false"
                    data-preview-title="Data Privacy &amp; Document Vault"
                    data-preview-desc="Store important company and customer files safely with clear access permissions and built-in Indian data privacy compliance."
                    data-preview-badge="SECURE FILE &amp; PRIVACY VAULT"
@@ -324,9 +325,9 @@
                   <span class="eleks-preview-kicker">BUILDERS &amp; CONTRACTORS</span>
                   <h3 class="eleks-preview-title">Construction Management System</h3>
                   <p class="eleks-preview-desc">Track daily work at construction sites, monitor cement and steel usage, verify contractor bills, and keep project budgets on track.</p>
-                  <a href="buildos.html" class="eleks-preview-cta"><span>Explore Platform</span> <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                  <a href="/construction-system" class="eleks-preview-cta"><span>Explore Platform</span> <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
-                <a href="buildos.html" class="eleks-mega-preview-media" aria-label="Explore Construction Management System">
+                <a href="/construction-system" class="eleks-mega-preview-media" aria-label="Explore Construction Management System">
                   <img src="assets/generated/ui-construction-system.jpg" alt="Construction Management System dashboard preview" class="eleks-preview-img" loading="lazy" />
                 </a>
               </div>
@@ -442,71 +443,307 @@
       <div class="hero-aurora-overlay" aria-hidden="true"></div>
 
       <div class="shell hero-21-content reveal">
+        <div class="hero-21-split">
+          <div class="hero-21-left">
+            <div class="hero-21-header">
+              <div class="hero-eyebrow-pill">
+                <span class="pill-beacon" aria-hidden="true"></span>
+                <span class="pill-label">PURPOSE-BUILT CONSTRUCTION TECH</span>
+                <span class="pill-sep" aria-hidden="true">·</span>
+                <span class="pill-loc">SITE TO HQ TELEMETRY</span>
+              </div>
+            </div>
 
-        <!-- GLOWING ORB MARK & SOVEREIGN STATUS PILL -->
-        <div class="hero-21-header">
-          <div class="hero-eyebrow-pill">
-            <span class="pill-beacon" aria-hidden="true"></span>
-            <span class="pill-label">PURPOSE-BUILT CONSTRUCTION TECH</span>
-            <span class="pill-sep" aria-hidden="true">·</span>
-            <span class="pill-loc">SITE TO HQ TELEMETRY</span>
+            <h1 class="hero-21-title">
+              Connected site operations<br />
+              <span class="hero-gradient-text">for modern construction.</span>
+            </h1>
+
+            <p class="hero-21-lede">
+              Engineered around BOQ tracking, daily site progress logs, contractor billing, material indent reconciliation, and milestone safety audits. Replace scattered WhatsApp groups and paper measurement books with connected execution clarity.
+            </p>
+
+            <div class="hero-21-actions">
+              <a class="btn btn-primary hero-btn-glow" href="#contact">
+                <span>Request Site Pilot</span>
+                <span class="btn-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="btn btn-ghost hero-btn-ambient" href="#capabilities">
+                <span>Explore Capabilities</span>
+                <span class="btn-arrow" aria-hidden="true">↓</span>
+              </a>
+            </div>
+
+            <div class="hero-21-proof">
+              <span class="proof-mark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </span>
+              <span>Orchestrating civil, infra &amp; EPC projects tracking <strong>₹2,800+ Cr in contract BOQ execution</strong> with zero unverified RA bills.</span>
+            </div>
+
+            <div class="hero-21-platform-strip" role="region" aria-label="BuildOS core capabilities">
+              <span class="hero-suite-pill">
+                <span class="suite-pill-icon">📐</span>
+                <span class="suite-pill-name">BOQ &amp; Rate Analysis</span>
+                <span class="suite-pill-tag">Dynamic S-Curve</span>
+              </span>
+              <span class="hero-suite-pill">
+                <span class="suite-pill-icon">📱</span>
+                <span class="suite-pill-name">Offline Mobile DPR</span>
+                <span class="suite-pill-tag">Sub-Second GPS</span>
+              </span>
+              <span class="hero-suite-pill">
+                <span class="suite-pill-icon">🏗️</span>
+                <span class="suite-pill-name">Digital M-Book</span>
+                <span class="suite-pill-tag">Automated RA Bills</span>
+              </span>
+              <span class="hero-suite-pill">
+                <span class="suite-pill-icon">⚖️</span>
+                <span class="suite-pill-name">Weighbridge IoT</span>
+                <span class="suite-pill-tag">Zero Site Leakage</span>
+              </span>
+            </div>
           </div>
-        </div>
 
-        <!-- HERO HEADLINE -->
-        <h1 class="hero-21-title">
-          Connected site operations<br />
-          <span class="hero-gradient-text">for modern construction.</span>
-        </h1>
+          <div class="ojix-device-showcase" aria-label="BuildOS platform preview">
+            <div class="ds-browser-frame">
+              <div class="ds-titlebar">
+                <div class="ds-traffic-lights"><span class="ds-dot ds-red"></span><span class="ds-dot ds-yellow"></span><span class="ds-dot ds-green"></span></div>
+                <div class="ds-urlbar">buildos.ojix.in/m-book</div>
+              </div>
+              <div class="ds-carousel-track">
+                <!-- SLIDE 1: Digital M-Book & RA Billing -->
+                <div class="carousel-slide active" aria-label="Digital M-Book & RA Billing">
+                  <svg class="ds-desktop-svg" viewBox="0 0 640 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="640" height="400" fill="#14171C"/>
+                    <rect x="0" y="0" width="140" height="400" fill="#0C0E12"/>
+                    <rect x="10" y="14" width="120" height="26" rx="5" fill="#1C2128"/>
+                    <text x="20" y="31" fill="#F59E0B" font-size="9" font-family="monospace" font-weight="700">BuildOS</text>
+                    <rect x="10" y="48" width="120" height="22" rx="4" fill="#2A2416"/>
+                    <text x="18" y="63" fill="#fff" font-size="8">🏗️  Digital M-Book</text>
+                    <text x="18" y="85" fill="#8B949E" font-size="8">📐  BOQ Engine</text>
+                    <text x="18" y="107" fill="#8B949E" font-size="8">📱  Site DPR</text>
+                    <text x="18" y="129" fill="#8B949E" font-size="8">⚖️  Weighbridge</text>
+                    <rect x="140" y="0" width="500" height="36" fill="#161A20"/>
+                    <text x="154" y="22" fill="#fff" font-size="10" font-weight="600">Digital M-Book &amp; Automated RA Bill Generation</text>
+                    <!-- Metric Cards -->
+                    <rect x="152" y="46" width="100" height="58" rx="6" fill="#1B2028"/>
+                    <text x="162" y="64" fill="#8B949E" font-size="7">BOQ EXECUTION</text>
+                    <text x="162" y="82" fill="#F59E0B" font-size="18" font-weight="700">₹48.2 Cr</text>
+                    <text x="162" y="96" fill="#28C840" font-size="7">↑ 74.2% Physical</text>
+                    <rect x="262" y="46" width="100" height="58" rx="6" fill="#1B2028"/>
+                    <text x="272" y="64" fill="#8B949E" font-size="7">CERTIFIED RA BILL 07</text>
+                    <text x="272" y="82" fill="#fff" font-size="15" font-weight="700">₹2.45 Cr</text>
+                    <text x="272" y="96" fill="#28C840" font-size="7">Zero Dispute M-Book</text>
+                    <rect x="372" y="46" width="100" height="58" rx="6" fill="#1B2028"/>
+                    <text x="382" y="64" fill="#8B949E" font-size="7">STEEL RECONCILIATION</text>
+                    <text x="382" y="82" fill="#28C840" font-size="18" font-weight="700">99.4%</text>
+                    <text x="382" y="96" fill="#28C840" font-size="7">BBS Barcode Synced</text>
+                    <rect x="482" y="46" width="132" height="58" rx="6" fill="#1B2028"/>
+                    <text x="492" y="64" fill="#8B949E" font-size="7">SITE TELEMETRY</text>
+                    <text x="492" y="82" fill="#fff" font-size="14" font-weight="700">12 Projects</text>
+                    <text x="492" y="96" fill="#F59E0B" font-size="7">HQ Live S-Curve</text>
+                    <!-- M-Book Line Items Table -->
+                    <rect x="152" y="114" width="462" height="196" rx="6" fill="#181D24"/>
+                    <rect x="152" y="114" width="462" height="26" rx="6" fill="#212730"/>
+                    <text x="162" y="131" fill="#8B949E" font-size="7.5" font-weight="600">BOQ ITEM CODE &amp; DESCRIPTION</text>
+                    <text x="320" y="131" fill="#8B949E" font-size="7.5" font-weight="600">QUANTITY</text>
+                    <text x="390" y="131" fill="#8B949E" font-size="7.5" font-weight="600">RATE</text>
+                    <text x="455" y="131" fill="#8B949E" font-size="7.5" font-weight="600">TOTAL</text>
+                    <text x="535" y="131" fill="#8B949E" font-size="7.5" font-weight="600">AUDIT</text>
+                    <!-- Row 1 -->
+                    <rect x="156" y="144" width="454" height="26" rx="3" fill="#1E242D"/>
+                    <text x="164" y="161" fill="#fff" font-size="7.5">C-14 · RCC Raft Pour M35 — Tower B</text>
+                    <text x="320" y="161" fill="#8B949E" font-size="7.5">450 m³</text>
+                    <text x="390" y="161" fill="#8B949E" font-size="7.5">₹7,850</text>
+                    <text x="455" y="161" fill="#fff" font-size="7.5">₹35.32L</text>
+                    <text x="535" y="161" fill="#28C840" font-size="7.5">✓ M-Book</text>
+                    <!-- Row 2 -->
+                    <rect x="156" y="174" width="454" height="26" rx="3" fill="#181D24"/>
+                    <text x="164" y="191" fill="#fff" font-size="7.5">S-08 · Fe550D TMT Reinforcement</text>
+                    <text x="320" y="191" fill="#8B949E" font-size="7.5">82 MT</text>
+                    <text x="390" y="191" fill="#8B949E" font-size="7.5">₹64,200</text>
+                    <text x="455" y="191" fill="#fff" font-size="7.5">₹52.64L</text>
+                    <text x="535" y="191" fill="#28C840" font-size="7.5">✓ Weighbridge</text>
+                    <!-- Row 3 -->
+                    <rect x="156" y="204" width="454" height="26" rx="3" fill="#1E242D"/>
+                    <text x="164" y="221" fill="#fff" font-size="7.5">W-02 · Basement 2 SBS Membrane</text>
+                    <text x="320" y="221" fill="#8B949E" font-size="7.5">1,800 m²</text>
+                    <text x="390" y="221" fill="#8B949E" font-size="7.5">₹420</text>
+                    <text x="455" y="221" fill="#fff" font-size="7.5">₹7.56L</text>
+                    <text x="535" y="221" fill="#28C840" font-size="7.5">✓ Certified</text>
+                    <!-- Row 4 -->
+                    <rect x="156" y="234" width="454" height="26" rx="3" fill="#181D24"/>
+                    <text x="164" y="251" fill="#fff" font-size="7.5">M-21 · Solid Concrete Blocks 200mm</text>
+                    <text x="320" y="251" fill="#8B949E" font-size="7.5">14,000 pcs</text>
+                    <text x="390" y="251" fill="#8B949E" font-size="7.5">₹68</text>
+                    <text x="455" y="251" fill="#fff" font-size="7.5">₹9.52L</text>
+                    <text x="535" y="251" fill="#28C840" font-size="7.5">✓ Gate Inward</text>
+                    <!-- Row 5 -->
+                    <rect x="156" y="264" width="454" height="26" rx="3" fill="#1E242D"/>
+                    <text x="164" y="281" fill="#fff" font-size="7.5">E-04 · Substation HT Cable Laying</text>
+                    <text x="320" y="281" fill="#8B949E" font-size="7.5">620 mtr</text>
+                    <text x="390" y="281" fill="#8B949E" font-size="7.5">₹1,450</text>
+                    <text x="455" y="281" fill="#fff" font-size="7.5">₹8.99L</text>
+                    <text x="535" y="281" fill="#F59E0B" font-size="7.5">⏳ In Inspection</text>
+                    <!-- Bottom banner -->
+                    <rect x="152" y="322" width="462" height="66" rx="6" fill="#13161D"/>
+                    <text x="164" y="344" fill="#fff" font-size="8.5" font-weight="600">Contractor Joint Measurement &amp; RA Bill Certification</text>
+                    <text x="164" y="360" fill="#8B949E" font-size="7">GPS-tagged site photos auto-appended to RA Bill 07 · Total Claim: ₹1.14 Cr</text>
+                    <text x="164" y="374" fill="#28C840" font-size="7">✓ Zero unmeasured deviations · Approved by Project Director</text>
+                  </svg>
+                </div>
 
-        <!-- HERO LEDE -->
-        <p class="hero-21-lede">
-          Engineered around BOQ tracking, daily site progress logs, contractor billing, material indent reconciliation, and milestone safety audits. Replace scattered WhatsApp groups and paper measurement books with connected execution clarity.
-        </p>
+                <!-- SLIDE 2: Weighbridge IoT & Material Indents -->
+                <div class="carousel-slide" aria-label="Weighbridge IoT & Material Indents">
+                  <svg class="ds-desktop-svg" viewBox="0 0 640 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="640" height="400" fill="#14171C"/>
+                    <rect x="0" y="0" width="140" height="400" fill="#0C0E12"/>
+                    <rect x="10" y="14" width="120" height="26" rx="5" fill="#1C2128"/>
+                    <text x="20" y="31" fill="#F59E0B" font-size="9" font-family="monospace" font-weight="700">BuildOS</text>
+                    <rect x="10" y="48" width="120" height="22" rx="4" fill="#1C2128"/>
+                    <text x="18" y="63" fill="#8B949E" font-size="8">🏗️  Digital M-Book</text>
+                    <text x="18" y="85" fill="#8B949E" font-size="8">📐  BOQ Engine</text>
+                    <text x="18" y="107" fill="#8B949E" font-size="8">📱  Site DPR</text>
+                    <rect x="10" y="114" width="120" height="22" rx="4" fill="#2A2416"/>
+                    <text x="18" y="129" fill="#fff" font-size="8">⚖️  Weighbridge</text>
+                    <rect x="140" y="0" width="500" height="36" fill="#161A20"/>
+                    <text x="154" y="22" fill="#fff" font-size="10" font-weight="600">IoT Weighbridge Telemetry &amp; Indent Reconciliation</text>
+                    <!-- Metric Cards -->
+                    <rect x="152" y="46" width="100" height="58" rx="6" fill="#1B2028"/>
+                    <text x="162" y="64" fill="#8B949E" font-size="7">VEHICLES INWARD</text>
+                    <text x="162" y="82" fill="#28C840" font-size="18" font-weight="700">48 Trucks</text>
+                    <text x="162" y="96" fill="#28C840" font-size="7">Gross 1,420 MT</text>
+                    <rect x="262" y="46" width="100" height="58" rx="6" fill="#1B2028"/>
+                    <text x="272" y="64" fill="#8B949E" font-size="7">WEIGHT VARIANCE</text>
+                    <text x="272" y="82" fill="#28C840" font-size="18" font-weight="700">0.00%</text>
+                    <text x="272" y="96" fill="#28C840" font-size="7">Auto Tare Verified</text>
+                    <rect x="372" y="46" width="100" height="58" rx="6" fill="#1B2028"/>
+                    <text x="382" y="64" fill="#8B949E" font-size="7">SILO INVENTORY</text>
+                    <text x="382" y="82" fill="#F59E0B" font-size="16" font-weight="700">84% Full</text>
+                    <text x="382" y="96" fill="#28C840" font-size="7">Batching Linked</text>
+                    <rect x="482" y="46" width="132" height="58" rx="6" fill="#1B2028"/>
+                    <text x="492" y="64" fill="#8B949E" font-size="7">TMT STEEL YARD</text>
+                    <text x="492" y="82" fill="#fff" font-size="15" font-weight="700">310 MT</text>
+                    <text x="492" y="96" fill="#28C840" font-size="7">Zero Unaccounted</text>
+                    <!-- Weighbridge Logs Table -->
+                    <rect x="152" y="114" width="462" height="196" rx="6" fill="#181D24"/>
+                    <rect x="152" y="114" width="462" height="26" rx="6" fill="#212730"/>
+                    <text x="162" y="131" fill="#8B949E" font-size="7.5" font-weight="600">TRUCK NO / MATERIAL</text>
+                    <text x="310" y="131" fill="#8B949E" font-size="7.5" font-weight="600">GROSS</text>
+                    <text x="370" y="131" fill="#8B949E" font-size="7.5" font-weight="600">TARE</text>
+                    <text x="430" y="131" fill="#8B949E" font-size="7.5" font-weight="600">NET QTY</text>
+                    <text x="520" y="131" fill="#8B949E" font-size="7.5" font-weight="600">STATUS</text>
+                    <!-- Row 1 -->
+                    <rect x="156" y="144" width="454" height="26" rx="3" fill="#1E242D"/>
+                    <text x="164" y="161" fill="#fff" font-size="7.5">MH-12-RN-8821 · UltraTech OPC 53</text>
+                    <text x="310" y="161" fill="#8B949E" font-size="7.5">42.10 MT</text>
+                    <text x="370" y="161" fill="#8B949E" font-size="7.5">12.05 MT</text>
+                    <text x="430" y="161" fill="#fff" font-size="7.5">30.05 MT</text>
+                    <text x="520" y="161" fill="#28C840" font-size="7.5">✓ PO Matched</text>
+                    <!-- Row 2 -->
+                    <rect x="156" y="174" width="454" height="26" rx="3" fill="#181D24"/>
+                    <text x="164" y="191" fill="#fff" font-size="7.5">KA-04-E-4491 · Tata Tiscon 20mm</text>
+                    <text x="310" y="191" fill="#8B949E" font-size="7.5">38.40 MT</text>
+                    <text x="370" y="191" fill="#8B949E" font-size="7.5">13.20 MT</text>
+                    <text x="430" y="191" fill="#fff" font-size="7.5">25.20 MT</text>
+                    <text x="520" y="191" fill="#28C840" font-size="7.5">✓ PO Matched</text>
+                    <!-- Row 3 -->
+                    <rect x="156" y="204" width="454" height="26" rx="3" fill="#1E242D"/>
+                    <text x="164" y="221" fill="#fff" font-size="7.5">DL-01-AB-1102 · M-Sand Zone II</text>
+                    <text x="310" y="221" fill="#8B949E" font-size="7.5">28.50 MT</text>
+                    <text x="370" y="221" fill="#8B949E" font-size="7.5">10.10 MT</text>
+                    <text x="430" y="221" fill="#fff" font-size="7.5">18.40 MT</text>
+                    <text x="520" y="221" fill="#28C840" font-size="7.5">✓ PO Matched</text>
+                    <!-- Row 4 -->
+                    <rect x="156" y="234" width="454" height="26" rx="3" fill="#181D24"/>
+                    <text x="164" y="251" fill="#fff" font-size="7.5">KA-51-B-9903 · Ready Mix M35</text>
+                    <text x="310" y="251" fill="#8B949E" font-size="7.5">32.20 MT</text>
+                    <text x="370" y="251" fill="#8B949E" font-size="7.5">14.10 MT</text>
+                    <text x="430" y="251" fill="#fff" font-size="7.5">18.10 MT</text>
+                    <text x="520" y="251" fill="#28C840" font-size="7.5">✓ Gate Pass OK</text>
+                    <!-- Row 5 -->
+                    <rect x="156" y="264" width="454" height="26" rx="3" fill="#1E242D"/>
+                    <text x="164" y="281" fill="#fff" font-size="7.5">MH-14-CC-2041 · Structural Steel Girder</text>
+                    <text x="310" y="281" fill="#8B949E" font-size="7.5">45.00 MT</text>
+                    <text x="370" y="281" fill="#8B949E" font-size="7.5">15.50 MT</text>
+                    <text x="430" y="281" fill="#fff" font-size="7.5">29.50 MT</text>
+                    <text x="520" y="281" fill="#28C840" font-size="7.5">✓ PO Matched</text>
+                    <!-- Bottom summary -->
+                    <rect x="152" y="322" width="462" height="66" rx="6" fill="#13161D"/>
+                    <text x="164" y="344" fill="#fff" font-size="8.5" font-weight="600">Automated Camera OCR &amp; Weighbridge Synchronizer</text>
+                    <text x="164" y="360" fill="#8B949E" font-size="7">ANPR camera auto-captures truck license plate and cross-checks digital e-way bill</text>
+                    <text x="164" y="374" fill="#28C840" font-size="7">✓ Material leakage eliminated across 14 batching plants and stockyards</text>
+                  </svg>
+                </div>
+              </div>
+              <div class="ds-dots" role="tablist" aria-label="Carousel navigation">
+                <button class="dot active" role="tab" aria-label="Slide 1: Digital M-Book &amp; RA Billing"></button>
+                <button class="dot" role="tab" aria-label="Slide 2: Weighbridge IoT &amp; Material Indents"></button>
+              </div>
+            </div><!-- /.ds-browser-frame -->
 
-        <!-- AMBIENT ACTION LABELS & CTAS -->
-        <div class="hero-21-actions">
-          <a class="btn btn-primary hero-btn-glow" href="#contact">
-            <span>Request Site Pilot</span>
-            <span class="btn-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="btn btn-ghost hero-btn-ambient" href="#modules">
-            <span>Explore Core Engines</span>
-            <span class="btn-arrow" aria-hidden="true">↓</span>
-          </a>
-        </div>
+            <!-- Separate unclipped mobile phone frame -->
+            <div class="ojix-phone-frame" aria-hidden="true">
+              <div class="ds-mobile-notch"></div>
+              <div class="ojix-phone-track">
+                <!-- Phone Slide 1 -->
+                <div class="ojix-phone-slide active">
+                  <svg viewBox="0 0 160 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="160" height="280" fill="#0C0E12"/>
+                    <rect x="8" y="8" width="144" height="32" rx="6" fill="#1C2128"/>
+                    <text x="16" y="28" fill="#F59E0B" font-size="11" font-weight="700">BuildOS Mobile</text>
+                    <text x="8" y="56" fill="#8B949E" font-size="8" font-weight="600">SITE DPR — 3 ACTIONS</text>
+                    <!-- Card 1 -->
+                    <rect x="8" y="64" width="144" height="50" rx="6" fill="#181D24" stroke="#F59E0B" stroke-width="0.8"/>
+                    <text x="16" y="84" fill="#fff" font-size="9" font-weight="600">🏗️ Tower B Pouring</text>
+                    <text x="16" y="100" fill="#F59E0B" font-size="8.5">450 m³ · M-Book #142 Signed</text>
+                    <!-- Card 2 -->
+                    <rect x="8" y="122" width="144" height="50" rx="6" fill="#181D24" stroke="#28C840" stroke-width="0.8"/>
+                    <text x="16" y="142" fill="#fff" font-size="9" font-weight="600">✓ Fe550D TMT Reinforce</text>
+                    <text x="16" y="158" fill="#28C840" font-size="8.5">82 MT · Weighbridge Synced</text>
+                    <!-- Card 3 -->
+                    <rect x="8" y="180" width="144" height="50" rx="6" fill="#181D24" stroke="#28C840" stroke-width="0.8"/>
+                    <text x="16" y="200" fill="#fff" font-size="9" font-weight="600">✓ Basement 2 Membrane</text>
+                    <text x="16" y="216" fill="#28C840" font-size="8.5">1,800 m² · RA Bill Certified</text>
+                    <rect x="8" y="238" width="144" height="34" rx="6" fill="#14171C"/>
+                    <text x="16" y="258" fill="#8B949E" font-size="8.5">📱 GPS Offline DPR Sync: OK</text>
+                  </svg>
+                </div>
+                <!-- Phone Slide 2 -->
+                <div class="ojix-phone-slide">
+                  <svg viewBox="0 0 160 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="160" height="280" fill="#0C0E12"/>
+                    <rect x="8" y="8" width="144" height="32" rx="6" fill="#1C2128"/>
+                    <text x="16" y="28" fill="#F59E0B" font-size="11" font-weight="700">Gate Telemetry</text>
+                    <text x="8" y="56" fill="#8B949E" font-size="8" font-weight="600">INWARD TRUCKS — 3 RECENT</text>
+                    <!-- Card 1 -->
+                    <rect x="8" y="64" width="144" height="50" rx="6" fill="#181D24" stroke="#28C840" stroke-width="0.8"/>
+                    <text x="16" y="84" fill="#fff" font-size="9" font-weight="600">⚖️ UltraTech OPC 53</text>
+                    <text x="16" y="100" fill="#28C840" font-size="8.5">30.05 MT Net · Tare Cleared</text>
+                    <!-- Card 2 -->
+                    <rect x="8" y="122" width="144" height="50" rx="6" fill="#181D24" stroke="#28C840" stroke-width="0.8"/>
+                    <text x="16" y="142" fill="#fff" font-size="9" font-weight="600">✓ Tata Tiscon 20mm</text>
+                    <text x="16" y="158" fill="#28C840" font-size="8.5">25.20 MT · ANPR Plate Match</text>
+                    <!-- Card 3 -->
+                    <rect x="8" y="180" width="144" height="50" rx="6" fill="#181D24" stroke="#F59E0B" stroke-width="0.8"/>
+                    <text x="16" y="200" fill="#fff" font-size="9" font-weight="600">⏳ M-Sand Zone II</text>
+                    <text x="16" y="216" fill="#F59E0B" font-size="8.5">18.40 MT · In Silo Transfer</text>
+                    <rect x="8" y="238" width="144" height="34" rx="6" fill="#14171C"/>
+                    <text x="16" y="258" fill="#8B949E" font-size="8.5">⚖️ Zero Material Leakage: 100%</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
 
-        <!-- TRUST PROOF CITATION -->
-        <div class="hero-21-proof">
-          <span class="proof-mark">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          </span>
-          <span>Orchestrating civil, infra &amp; EPC projects tracking <strong>₹2,800+ Cr in contract BOQ execution</strong> with zero unverified RA bills.</span>
-        </div>
+            <!-- Unclipped bottom-left floating badge -->
+            <div class="ds-badge-container" aria-hidden="true">
+              <span class="ds-floating-badge active">GPS-Tagged Mobile DPR</span>
+              <span class="ds-floating-badge">Zero Material Leakage</span>
+            </div>
+          </div>
 
-        <!-- 4 PILLAR CAPABILITY PILLS -->
-        <div class="hero-21-platform-strip" role="region" aria-label="BuildOS core capabilities">
-          <span class="hero-suite-pill">
-            <span class="suite-pill-icon">📐</span>
-            <span class="suite-pill-name">BOQ &amp; Rate Analysis</span>
-            <span class="suite-pill-tag">Dynamic S-Curve</span>
-          </span>
-          <span class="hero-suite-pill">
-            <span class="suite-pill-icon">📱</span>
-            <span class="suite-pill-name">Offline Mobile DPR</span>
-            <span class="suite-pill-tag">Sub-Second GPS</span>
-          </span>
-          <span class="hero-suite-pill">
-            <span class="suite-pill-icon">🏗️</span>
-            <span class="suite-pill-name">Digital M-Book</span>
-            <span class="suite-pill-tag">Automated RA Bills</span>
-          </span>
-          <span class="hero-suite-pill">
-            <span class="suite-pill-icon">⚖️</span>
-            <span class="suite-pill-name">Weighbridge IoT</span>
-            <span class="suite-pill-tag">Zero Site Leakage</span>
-          </span>
-        </div>
+        </div><!-- /.hero-21-split -->
       </div>
     </section>
 
@@ -636,7 +873,8 @@
     </section>
 
     <!-- SECTION 05: CORE CAPABILITY ENGINES (6 MODULES WITH 3 TAGS EACH) -->
-    <section class="section-pad" id="modules">
+    <section class="section-pad" id="capabilities">
+      <div id="modules" aria-hidden="true"></div>
       <div class="shell reveal">
         <div class="section-heading">
           <div>
@@ -946,28 +1184,28 @@
       <div class="footer-col">
         <span class="footer-label">EXPLORE</span>
         <a href="index.html#platforms">All Platforms</a>
-        <a href="legalos.html">LegalOS Deep Dive</a>
-        <a href="procureos.html">ProcureOS Deep Dive</a>
-        <a href="campusos.html">CampusOS Deep Dive</a>
-        <a href="buildos.html" style="color: #fff; font-weight: 700;">BuildOS Deep Dive</a>
-        <a href="dpdp-compliance.html">DPDP 2025 Guide</a>
+        <a href="/legal-practice-system">LegalOS Deep Dive</a>
+        <a href="/purchase-inventory">ProcureOS Deep Dive</a>
+        <a href="/school-college-system">CampusOS Deep Dive</a>
+        <a href="/construction-system" style="color: #fff; font-weight: 700;">BuildOS Deep Dive</a>
+        <a href="/data-privacy-vault">DPDP 2025 Guide</a>
         <a href="index.html#security-trust">Security &amp; Sovereignty</a>
       </div>
       <div class="footer-col">
         <span class="footer-label">CONNECTED PLATFORMS</span>
-        <a href="companyos.html">CompanyOS (Operations)</a>
-        <a href="buildos.html">BuildOS (Construction)</a>
-        <a href="legalos.html">LegalOS (Litigation)</a>
-        <a href="procureos.html">ProcureOS (Supply Chain)</a>
-        <a href="campusos.html">CampusOS (Higher Ed)</a>
-        <a href="travelos.html">TravelOS (Fleet &amp; Dispatch)</a>
-        <a href="fitos.html">FitOS (Clubs &amp; Wellness)</a>
+        <a href="/company-management">CompanyOS (Operations)</a>
+        <a href="/construction-system">BuildOS (Construction)</a>
+        <a href="/legal-practice-system">LegalOS (Litigation)</a>
+        <a href="/purchase-inventory">ProcureOS (Supply Chain)</a>
+        <a href="/school-college-system">CampusOS (Higher Ed)</a>
+        <a href="/travel-booking">TravelOS (Fleet &amp; Dispatch)</a>
+        <a href="/gym-fitness-system">FitOS (Clubs &amp; Wellness)</a>
       </div>
       <div class="footer-col">
         <span class="footer-label">LEGAL &amp; PRIVACY</span>
-        <a href="dpdp-compliance.html">DPDP 2025 Architecture Guide</a>
-        <a href="dpdp-compliance.html" data-open-modal="privacy-modal">Privacy Policy (DPDP 2025)</a>
-        <a href="dpdp-compliance.html#cookies" data-open-modal="cookie-policy-modal">Cookie Policy</a>
+        <a href="/data-privacy-vault">DPDP 2025 Architecture Guide</a>
+        <a href="/data-privacy-vault" data-open-modal="privacy-modal">Privacy Policy (DPDP 2025)</a>
+        <a href="/data-privacy-vault#cookies" data-open-modal="cookie-policy-modal">Cookie Policy</a>
         <button type="button" class="footer-link-btn" data-open-modal="cookie-modal">Consent &amp; Preferences</button>
         <a href="mailto:info@ojix.in">Grievance Redressal (48h SLA) <span aria-hidden="true">↗</span></a>
       </div>
